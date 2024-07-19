@@ -1,4 +1,4 @@
-# Sesión 1
+# Módulo I - Sesión I
 
 ## Agenda
 

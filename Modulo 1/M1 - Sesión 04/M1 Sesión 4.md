@@ -1,4 +1,4 @@
-# Sesión 4
+# Módulo I - Sesión IV
 
 ## Agenda
 
@@ -77,5 +77,4 @@ Principios
   - Acceso a la información sensible limitado segúin roles
   - Capacitación para informar los riesgos legales invoolucrados en el trafico de data.
 
-- Sobornos y conflictos de interés en proyectos de TI.
-  -
+- ## Sobornos y conflictos de interés en proyectos de TI.
