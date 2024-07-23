@@ -20,25 +20,104 @@
     <p>Cristofer</p>
     <p>Binimelis</p>
 
-    <img src="./Assets/img/2.png" alt="Thursthon 2" /> <br />
+    <img src="../M2 - Sesion 2/Assets/img/1.png" alt="Thursthon 2" /> <br />
     <a href="../M2 - Sesion 1/m2sesion1.html">Ir a primera paginma</a>
 
     <h1 id="titleHidden" hidden>Hidden Title</h1>
 
     <form action="" method="post">
       <fieldset id="dataFS">
-        <label for="nombre">Nombre</label>
-        <input id="nombre" type="text" placeholder="John Doe" />
-        <br />
-
-        <label for="pass">Contraseña</label>
-        <input type="password" name="pass" id="pass" placeholder="Jdoe123" />
-        <br />
-
-        <label for="mail">Correo</label>
-        <input type="email" name="mail" id="mail" placeholder="jdoe@job.com" />
-        <br />
-
+        <p>
+          <label for="nombre">Nombre</label>
+          <input id="nombre" type="text" placeholder="John Doe" />
+        </p>
+        <p>
+          <label for="pass">Contraseña</label>
+          <input type="password" name="pass" id="pass" placeholder="Jdoe123" />
+        </p>
+        <p>
+          <label for="mail">Correo</label>
+          <input
+            type="email"
+            name="mail"
+            id="mail"
+            placeholder="jdoe@job.com"
+          />
+        </p>
+        <p>
+          <label for="edad">Edad</label>
+          <input
+            type="number"
+            name="edad"
+            id="edad"
+            placeholder="30"
+            max="99"
+            min="0"
+          />
+        </p>
+        <p>
+          <label for="color">Color</label>
+          <input
+            type="color"
+            name="color"
+            id="color"
+            placeholder="jdoe@job.com"
+          />
+        </p>
+        <p>
+          <label for="fecha">Fecha</label>
+          <input type="date" name="fecha" id="fecha" />
+        </p>
+        <p>
+          <label for="file">Archivo</label>
+          <input type="file" name="file" id="file" />
+        </p>
+        <p>
+          <label for="range">Peso</label>
+          <input type="range" name="range" id="range" min="10" max="120" />
+        </p>
+        <p>
+          <label for="isActive">Color</label>
+          Futbol
+          <input
+            type="checkbox"
+            name="sport"
+            id="checkFootball"
+            value="football"
+          />
+          Basquetball
+          <input
+            type="checkbox"
+            name="sport"
+            id="checkBasketball"
+            value="basketball"
+          />
+          Beisbol
+          <input
+            type="checkbox"
+            name="sport"
+            id="checkTennis"
+            value="baseball"
+          />
+        </p>
+        <p>
+          <label for="colorFav">Color Favorito</label>
+          Rojo
+          <input type="radio" name="colorFav" id="radioRed" value="rojo" />
+          Verde
+          <input type="radio" name="colorFav" id="radioGreen" value="verde" />
+          Azul
+          <input type="radio" name="colorFav" id="radioBlue" value="azul" />
+        </p>
+        <p>
+          <label for="">Comuna de residencia</label>
+          <select name="comuna" id="comuna">
+            <option value="0001">Las Condes</option>
+            <option value="0002">Vitacura</option>
+            <option value="0003">La Florida</option>
+            <option value="0004">Santiago</option>
+          </select>
+        </p>
         <input type="submit" value="Enviar" />
       </fieldset>
     </form>
