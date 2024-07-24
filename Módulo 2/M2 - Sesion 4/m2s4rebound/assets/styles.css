@@ -1,0 +1,82 @@
+div {
+  display: inline-flex;
+  width: 96vw;
+  height: 10vh;
+}
+.rosado {
+  background-color: pink;
+}
+
+.verde {
+  background-color: green;
+}
+
+.azul {
+  background-color: blue;
+}
+
+.rojo {
+  background-color: red;
+}
+
+.morado {
+  background-color: darkmagenta;
+}
+
+.gris {
+  background-color: gray;
+}
+
+@media (max-width: 500px) {
+  .rosado,
+  .verde,
+  .gris {
+    height: 20vh;
+  }
+
+  .azul {
+    height: 10vh;
+  }
+
+  .rojo,
+  .morado {
+    display: none;
+  }
+}
+
+@media ((min-width: 501px) and (max-width:750px)) {
+  .verde,
+  .azul,
+  .rojo {
+    width: 31.5vw;
+  }
+
+  .morado,
+  .gris {
+    height: 20vh;
+  }
+
+  .morado {
+    width: 58vw;
+  }
+
+  .gris {
+    width: 38vw;
+  }
+}
+
+@media (min-width: 751px) {
+  .rosado {
+    height: 2vh;
+  }
+
+  .azul {
+    height: 20vh;
+  }
+
+  .rojo,
+  .morado,
+  .gris {
+    width: 31.5vw;
+  }
+}

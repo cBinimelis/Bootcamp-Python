@@ -1,0 +1,66 @@
+.special-font {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+
+.center-text {
+  text-align: center;
+}
+
+.margin {
+  margin-top: 50px;
+}
+
+.bg-red {
+  background-color: red;
+}
+
+.bg-blue {
+  background-color: blue;
+}
+
+.bg-yellow {
+  background-color: yellow;
+}
+
+.dimension {
+  height: 100px;
+  width: 100px;
+}
+
+.float {
+  float: right;
+}
+
+.variable {
+  background-color: white;
+}
+
+@media (min-width: 575px) {
+  .variable {
+    background-color: black;
+  }
+}
+
+@media ((min-width: 576px) and (max-width:767px)) {
+  .variable {
+    background-color: green;
+  }
+}
+
+@media ((min-width: 768px) and (max-width:991px)) {
+  .variable {
+    background-color: red;
+  }
+}
+
+@media ((min-width: 992px) and (max-width:1199px)) {
+  .variable {
+    background-color: blue;
+  }
+}
+
+@media (min-width: 1200px) {
+  .variable {
+    background-color: yellow;
+  }
+}

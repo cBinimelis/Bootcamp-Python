@@ -6,8 +6,7 @@
 
 ## CSS - Cascade Style Sheets
 
-Es un lenguaje de programación basado en reglas semánticas en las cuales se utilizan selectores para aplicar dichas reglas en los elementos por medio de selectores.
-
+CSS u Hojas de Estilo en Cascada (en inglés Cascading Style Sheets) es un lenguaje de estilizado, es decir, un lenguaje que nos permite dar estilos a documentos HTML y otros lenguajes que no hemos estudiado durante este curso.
 Se componede 3 elementos basicos:
 
 - Selector
