@@ -1,0 +1,17 @@
+.btn-dark-kz {
+  background-color: #b7144e;
+  border-color: #b7144e;
+}
+.btn-dark-kz:hover {
+  background-color: #970f3f;
+  border-color: #b7144e;
+}
+.btn-dark-kz:focus {
+  background-color: #b7144e;
+  border-color: #b7144e;
+}
+
+.btn-dark-kz:active {
+  background-color: #cb6a96;
+  border-color: #b7144e;
+}
