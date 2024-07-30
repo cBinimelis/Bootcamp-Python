@@ -25,6 +25,7 @@ body {
   background-color: #62dad3;
 }
 
-.list-group-item {
+.list-group-item,
+.dd-toggle {
   color: #051b54;
 }
