@@ -21,6 +21,25 @@
     <div class="contenedor">
       <h1>Soy un título</h1>
     </div>
+
+    <div
+      class="caja1"
+      style="padding: 10px; background-color: chartreuse"
+      onclick="this.style.backgroundColor='red';"
+    >
+      <p>Caja que cambia de color</p>
+    </div>
+
+    <label>Elija un color:</label>
+    <select id="nieve" onchange="miFuncion()" name="nieve">
+      <option value="">Seleccione Uno …</option>
+      <option value="verde">Verde</option>
+      <option value="amarillo">Amarillo</option>
+      <option value="rojo">Rojo</option>
+    </select>
+
+    <div id="resultado"></div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js
     "></script>
     <script src="./assets/js/script.js"></script>

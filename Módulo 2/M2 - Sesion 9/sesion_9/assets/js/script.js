@@ -60,6 +60,20 @@ function lanzarDado() {
   return 3;
 }
 
-var creandoElemento = document.createElement("p");
+let selectorId = document.getElementById("parrafo");
+console.log(selectorId);
+
+let creandoElemento = document.createElement("p");
 creandoElemento.textContent = "Este nodo fue creado desde JavaScript";
 document.body.appendChild(creandoElemento);
+
+var selectorVarios = document.querySelector(".contenedor");
+creandoElemento.textContent = "Este nodo MULTIPLE fue creado desde JavaScript";
+selectorVarios.append(creandoElemento);
+
+function miFuncion() {
+  var captura = document.querySelector("#nieve");
+  var valor = captura.value;
+  document.getElementById("resultado").innerText = `Usted ha
+ seleccionado ${valor}`;
+}
