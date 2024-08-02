@@ -18,7 +18,9 @@
     </div>
 
     <div class="container">
-      <button type="button" class="btn btn-success">Agregar tarea</button>
+      <button type="button" onclick="tareasToggle()" class="btn btn-success">
+        Agregar tarea
+      </button>
       <div id="formulario">
         <form action="">
           <div class="mb-3">
@@ -28,7 +30,13 @@
             <input type="text" class="form-control" id="nuevaTarea" />
           </div>
           <div class="mb-3">
-            <button type="button" class="btn btn-primary">Agregar</button>
+            <button
+              type="button"
+              class="btn btn-primary"
+              onclick="agregarTarea()"
+            >
+              Agregar
+            </button>
           </div>
         </form>
       </div>
@@ -43,10 +51,7 @@
           </tr>
         </thead>
         <tbody id="cuerpo-tabla">
-          <tr>
-            <td>tabla</td>
-            <td></td>
-          </tr>
+          <tr></tr>
         </tbody>
       </table>
     </div>
