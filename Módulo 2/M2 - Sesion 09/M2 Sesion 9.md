@@ -1,4 +1,4 @@
-# Módulo II - Sesión VIII
+# Módulo II - Sesión IX
 
 ## Agenda
 
