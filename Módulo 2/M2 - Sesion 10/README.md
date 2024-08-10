@@ -9,7 +9,7 @@
 
 ### Asincrónica
 
-- ¿
+- JQuery
 
 ## Objetos
 
