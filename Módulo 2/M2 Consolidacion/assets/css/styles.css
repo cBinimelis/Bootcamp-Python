@@ -1,0 +1,16 @@
+@font-face {
+  font-family: "Montserrat";
+  src: url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap");
+}
+
+header {
+  height: 70vh;
+  background-color: #b7144e;
+}
+
+#titulo {
+  font-family: "Montserrat", sans-serif;
+  color: white;
+  font-size: 7rem;
+  font-weight: 900;
+}
