@@ -11,6 +11,26 @@ header {
 #titulo {
   font-family: "Montserrat", sans-serif;
   color: white;
-  font-size: 7rem;
+  font-size: 5vh;
   font-weight: 900;
+  display: none;
+}
+
+nav {
+  background-color: #b7144e;
+}
+
+.navbar-brand {
+  font-family: "Montserrat", sans-serif;
+  color: white;
+  font-weight: 700;
+}
+
+h2 {
+  color: #14b788;
+  font-weight: 700;
+}
+
+a {
+  color: white;
 }
