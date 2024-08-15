@@ -1,3 +1,10 @@
 $(document).ready(function () {
-  $("#titulo").delay(800).fadeIn();
+  $("#Logo").delay(800).fadeIn();
+
+  $("html, body").animate(
+    {
+      scrollTop: $("#intro").offset().top,
+    },
+    2000
+  );
 });

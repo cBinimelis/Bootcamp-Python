@@ -4,20 +4,33 @@
 }
 
 header {
-  height: 70vh;
+  height: 100vh;
   background-color: #b7144e;
-}
-
-#titulo {
-  font-family: "Montserrat", sans-serif;
-  color: white;
-  font-size: 5vh;
-  font-weight: 900;
-  display: none;
 }
 
 nav {
   background-color: #b7144e;
+}
+
+h2 {
+  color: #b7144e;
+  font-weight: 700;
+}
+
+a {
+  color: white;
+}
+
+body,
+html {
+  scroll-snap-type: proximity;
+  scroll-snap-points-y: repeat(100vh);
+  scroll-snap-type: y proximity;
+}
+.big-text {
+  font-family: "Montserrat", sans-serif;
+  color: #b7144e;
+  font-weight: 800;
 }
 
 .navbar-brand {
@@ -26,11 +39,18 @@ nav {
   font-weight: 700;
 }
 
-h2 {
-  color: #14b788;
-  font-weight: 700;
+#Logo {
+  display: none;
+  height: 30vh;
 }
 
-a {
-  color: white;
+#intro,
+#Formulario {
+  min-height: 100vh;
+}
+
+#projects,
+#intro {
+  scroll-snap-align: center;
+  scroll-snap-type: y mandatory;
 }
