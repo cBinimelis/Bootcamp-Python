@@ -39,17 +39,24 @@
           <li class="nav-item">
             <a class="nav-link" href="#intro">Introducción</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#projects">Proyectos</a>
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#projects"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Proyectos
+            </a>
+            <ul class="dropdown-menu" data-bs-theme="light">
+              <li><a class="dropdown-item" href="#projects">Desarrollo</a></li>
+              <li><a class="dropdown-item" href="#">Diseño</a></li>
+              <li><a class="dropdown-item" href="#">Modelado</a></li>
+            </ul>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#scrollspyHeading3">Third</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#scrollspyHeading4">Fourth</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#scrollspyHeading5">Fifth</a>
+            <a class="nav-link" href="#Formulario">Contacto</a>
           </li>
         </ul>
       </div>
@@ -58,715 +65,759 @@
       <h1
         class="position-absolute text-light text-center top-50 start-50 translate-middle display-1"
       >
-        <svg
-          id="Logo"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 36.83 82.86"
-        >
-          <defs>
-            <style>
-              .cls-1 {
-                fill: #fff;
-              }
-            </style>
-          </defs>
-          <g id="Capa_2" data-name="Capa 2">
-            <g id="Capa_1-2" data-name="Capa 1">
-              <rect class="cls-1" width="9.21" height="40.97" />
-              <rect class="cls-1" y="41.89" width="36.83" height="9.21" />
-              <polygon
-                class="cls-1"
-                points="30.22 0 10.13 20.09 10.13 33.3 36.83 6.6 36.83 0 30.22 0"
-              />
-              <polygon
-                class="cls-1"
-                points="25.66 19.06 19.06 25.66 34.37 40.97 36.83 40.97 36.83 39.43 36.83 30.22 25.66 19.06"
-              />
-              <polygon
-                class="cls-1"
-                points="17.13 73.65 7.92 82.86 36.83 82.86 36.83 73.65 17.13 73.65"
-              />
-              <polygon
-                class="cls-1"
-                points="36.83 52.02 24.24 52.02 2.6 73.65 0 76.25 0 82.86 6.6 82.86 6.62 82.86 15.83 73.65 15.81 73.65 36.83 52.63 36.83 52.02"
-              />
-            </g>
-          </g>
-        </svg>
+        <img src="./assets/img/Logo.svg" id="Logo" alt="" />
       </h1>
     </header>
-    <main class="container p-5">
-      <div id="intro" class="row py-5 align-content-center">
-        <h1 class="text-center display-2">¿QUIEN SOY?</h1>
-        <div class="col-12 col-lg-4">
-          <img
-            src="./assets/img/Dev_hdpi.jpg"
-            alt="Imagen del desarrollador"
-            class="img-fluid rounded-circle"
-          />
-        </div>
-        <div class="col-12 col-lg-8">
-          <h2 class="text-end">KURIZUBI</h2>
-          <h3 class="text-end">
-            C# | .NET 8 | Blazor | Entity Framework | SQL
-          </h3>
-          <p class="align-self-center">
-            ¡Hola! Soy <b>Cristofer Binimelis</b>, desarrollador freelance y
-            especializado en demasiadas áreas como para poder conformarme con
-            sólo una. Aunque mis pasiones son muy variadas, es la programación
-            la que siempre me ha motivado. Mi principal pasión es el desarrollo
-            en C#, a través de los años he desarrollado varios sistemas, desde
-            algunos más pequeños, hasta otros casi colosales, en los cuales he
-            podido mostrar todas las habilidades que poseo, a la vez que voy
-            aprendiendo otras nuevas.
-          </p>
-          <p class="align-self-center">
-            Adicionalmente, poseo extensa experiencia en diseño, utilizando
-            herramientas de la suite Adobe para generar contenido de diseño a
-            pedido; Afiches, videos, posters, etc. Sumado a eso, también
-            experiencia de modelado y animación con Blender, en el cual he
-            generado distintos renders, modelos, composiciones y animaciones.
-          </p>
-        </div>
-      </div>
-
-      <div id="projects" class="row my-3 pt-5">
-        <h1 class="text-center display-2 pt-5">PROYECTOS</h1>
-        <h2 class="text-end">Ñoñopedia</h2>
-        <h4 class="text-end">C# | .NET Framework 4.6 | SQL</h4>
-        <div class="col-12 col-lg-6">
-          <p class="align-self-center">
-            “Quiero un lugar donde anotar los animes que he visto, pero algo más
-            que un Word o un Excel”. Con esa sencilla frase se dió el génesis de
-            este proyecto, el cual terminó poco a poco, transformándose en un
-            Goliat de proporciones totalmente fuera del plan de desarrollo que
-            había visionado en un principio el cliente, pero he de admitir que,
-            nunca estuve reacio a aceptar los desafíos que se requerían del
-            sistema, mientras más avanzaba en el proyecto, más ideas surgían,
-            más problemas aparecían y mayor cantidad de soluciones se
-            entregaban. Llegado a cierto punto yo mismo incluí una considerable
-            cantidad de funciones opcionales, todo con tal de poder darle al
-            usuario el mejor sistema que podría haber creado en ese momento.
-          </p>
-        </div>
-        <div class="col-12 col-lg-6">
-          <!--------------------------------------------------------------------FILA 1-------------------------------------------------------------------->
-          <div class="row">
-            <!----------------------------------IMAGEN 1---------------------------------->
-            <div class="col-12 col-lg-4">
-              <img
-                class="img-fluid shadow my-2"
-                src="./assets/img/Nerd/Nerd_1hdpi.jpg"
-                alt=""
-                data-bs-toggle="modal"
-                data-bs-target="#md1"
-              />
-              <!--Modal-->
-              <div class="modal fade" id="md1" tabindex="-1">
-                <div class="modal-dialog modal-dialog-centered modal-xl">
-                  <div class="modal-content">
-                    <img
-                      class="img-fluid shadow"
-                      src="./assets/img/Nerd/Nerd_1hdpi.jpg"
-                      alt=""
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!----------------------------------IMAGEN 2---------------------------------->
-            <div class="col-12 col-lg-4">
-              <img
-                class="img-fluid shadow my-2"
-                src="./assets/img/Nerd/Nerd_2hdpi.jpg"
-                alt=""
-                data-bs-toggle="modal"
-                data-bs-target="#md2"
-              />
-              <!--Modal-->
-              <div class="modal fade" id="md2" tabindex="-1">
-                <div class="modal-dialog modal-dialog-centered modal-xl">
-                  <div class="modal-content">
-                    <img
-                      class="img-fluid shadow"
-                      src="./assets/img/Nerd/Nerd_2hdpi.jpg"
-                      alt=""
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!----------------------------------IMAGEN 3---------------------------------->
-            <div class="col-12 col-lg-4">
-              <img
-                class="img-fluid shadow my-2"
-                src="./assets/img/Nerd/Nerd_3hdpi.jpg"
-                alt=""
-                data-bs-toggle="modal"
-                data-bs-target="#md3"
-              />
-              <!--Modal-->
-              <div class="modal fade" id="md3" tabindex="-1">
-                <div class="modal-dialog modal-dialog-centered modal-xl">
-                  <div class="modal-content">
-                    <img
-                      class="img-fluid shadow"
-                      src="./assets/img/Nerd/Nerd_3hdpi.jpg"
-                      alt=""
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!--------------------------------------------------------------------FILA 2-------------------------------------------------------------------->
-          <div class="row">
-            <!----------------------------------IMAGEN 4---------------------------------->
-            <div class="col-12 col-lg-4">
-              <img
-                class="img-fluid shadow my-2"
-                src="./assets/img/Nerd/Nerd_4hdpi.jpg"
-                alt=""
-                data-bs-toggle="modal"
-                data-bs-target="#md4"
-              />
-              <!--Modal-->
-              <div class="modal fade" id="md4" tabindex="-1">
-                <div class="modal-dialog modal-dialog-centered modal-xl">
-                  <div class="modal-content">
-                    <img
-                      class="img-fluid shadow"
-                      src="./assets/img/Nerd/Nerd_4hdpi.jpg"
-                      alt=""
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!----------------------------------IMAGEN 5---------------------------------->
-            <div class="col-12 col-lg-4">
-              <img
-                class="img-fluid shadow my-2"
-                src="./assets/img/Nerd/Nerd_5hdpi.jpg"
-                alt=""
-                data-bs-toggle="modal"
-                data-bs-target="#md5"
-              />
-              <!--Modal-->
-              <div class="modal fade" id="md5" tabindex="-1">
-                <div class="modal-dialog modal-dialog-centered modal-xl">
-                  <div class="modal-content">
-                    <img
-                      class="img-fluid shadow"
-                      src="./assets/img/Nerd/Nerd_5hdpi.jpg"
-                      alt=""
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!----------------------------------IMAGEN 6---------------------------------->
-            <div class="col-12 col-lg-4">
-              <img
-                class="img-fluid shadow my-2"
-                src="./assets/img/Nerd/Nerd_6hdpi.jpg"
-                alt=""
-                data-bs-toggle="modal"
-                data-bs-target="#md6"
-              />
-              <!--Modal-->
-              <div class="modal fade" id="md6" tabindex="-1">
-                <div class="modal-dialog modal-dialog-centered modal-xl">
-                  <div class="modal-content">
-                    <img
-                      class="img-fluid shadow"
-                      src="./assets/img/Nerd/Nerd_6hdpi.jpg"
-                      alt=""
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!--------------------------------------------------------------------FILA 3-------------------------------------------------------------------->
-        <div class="row text-center">
-          <!----------------------------------IMAGEN 7---------------------------------->
-          <div class="col-12 col-lg-2">
+    <main>
+      <section class="container">
+        <div id="intro" class="row py-5 align-content-center">
+          <h1 class="text-center display-2">¿QUIEN SOY?</h1>
+          <div class="col-12 col-lg-4">
             <img
-              class="img-fluid shadow my-2"
-              src="./assets/img/Nerd/Nerd_7hdpi.jpg"
-              alt=""
-              data-bs-toggle="modal"
-              data-bs-target="#md7"
+              src="./assets/img/Dev_hdpi.jpg"
+              alt="Imagen del desarrollador"
+              class="img-fluid rounded-circle"
             />
-            <!--Modal-->
-            <div class="modal fade" id="md7" tabindex="-1">
-              <div class="modal-dialog modal-dialog-centered modal-xl">
-                <div class="modal-content">
+          </div>
+          <div class="col-12 col-lg-8">
+            <h2 class="text-end text-title">KURIZUBI</h2>
+            <h3 class="text-end">
+              C# | .NET 8 | Blazor | Entity Framework | SQL
+            </h3>
+            <p class="align-self-center">
+              ¡Hola! Soy <b>Cristofer Binimelis</b>, desarrollador freelance y
+              especializado en demasiadas áreas como para poder conformarme con
+              sólo una. Aunque mis pasiones son muy variadas, es la programación
+              la que siempre me ha motivado. Mi principal pasión es el
+              desarrollo en C#, a través de los años he desarrollado varios
+              sistemas, desde algunos más pequeños, hasta otros casi colosales,
+              en los cuales he podido mostrar todas las habilidades que poseo, a
+              la vez que voy aprendiendo otras nuevas.
+            </p>
+            <p class="align-self-center">
+              Adicionalmente, poseo extensa experiencia en diseño, utilizando
+              herramientas de la suite Adobe para generar contenido multimedia a
+              pedido; Afiches, videos, posters, etc. Y también, a manera de
+              hobby, he amasado un poco de experiencia en el modelado y
+              animación con el software <b>Blender</b>, en el cual he generado
+              distintos renders, modelos 3D, composiciones de espacio y
+              animaciones.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <div id="projects" class="my-3 py-5 text-white">
+        <h1 class="text-center display-2 p-5">PROYECTOS</h1>
+        <div class="container">
+          <div class="row align-content-center">
+            <div class="col-12 col-lg-6 mb-3">
+              <img
+                class="img-fluid my-2"
+                src="./assets/img/Nerd/Logo.png"
+                alt=""
+                data-bs-toggle="modal"
+                data-bs-target="#mdl"
+              />
+            </div>
+            <div class="col-12 col-lg-6 mb-3">
+              <h2 class="text-end text-title" style="color: white">
+                Ñoñopedia
+              </h2>
+              <h4 class="text-end">C# | .NET Framework 4.6 | SQL</h4>
+              <p class="align-self-center">
+                “Quiero un lugar donde anotar los animes que he visto, pero algo
+                más que un Word o un Excel”. Con esa sencilla frase se dió el
+                génesis de este proyecto, el cual terminó poco a poco,
+                transformándose en un Goliat de proporciones totalmente fuera
+                del plan de desarrollo que había visionado en un principio el
+                cliente, pero he de admitir que, nunca estuve reacio a aceptar
+                los desafíos que se requerían del sistema, mientras más avanzaba
+                en el proyecto, más ideas surgían, más problemas aparecían y
+                mayor cantidad de soluciones se entregaban. Llegado a cierto
+                punto yo mismo incluí una considerable cantidad de funciones
+                opcionales, todo con tal de poder darle al usuario el mejor
+                sistema que podría haber creado en ese momento.
+              </p>
+            </div>
+          </div>
+          <div class="align-content-center">
+            <!--------------------------------------------------------------------FILA 1-------------------------------------------------------------------->
+            <div class="row align-content-center mb-3">
+              <!----------------------------------IMAGEN 1---------------------------------->
+              <div class="col-12 col-lg-4">
+                <img
+                  class="img-fluid rounded shadow my-2"
+                  src="./assets/img/Nerd/Nerd_1hdpi.jpg"
+                  alt=""
+                  data-bs-toggle="modal"
+                  data-bs-target="#md1"
+                />
+                <!--Modal-->
+                <div class="modal fade" id="md1" tabindex="-1">
+                  <div class="modal-dialog modal-dialog-centered modal-xl">
+                    <div class="modal-content">
+                      <img
+                        class="img-fluid shadow"
+                        src="./assets/img/Nerd/Nerd_1hdpi.jpg"
+                        alt=""
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!----------------------------------IMAGEN 2---------------------------------->
+              <div class="col-12 col-lg-4">
+                <img
+                  class="img-fluid shadow my-2 rounded"
+                  src="./assets/img/Nerd/Nerd_2hdpi.jpg"
+                  alt=""
+                  data-bs-toggle="modal"
+                  data-bs-target="#md2"
+                />
+                <!--Modal-->
+                <div class="modal fade" id="md2" tabindex="-1">
+                  <div class="modal-dialog modal-dialog-centered modal-xl">
+                    <div class="modal-content">
+                      <img
+                        class="img-fluid shadow"
+                        src="./assets/img/Nerd/Nerd_2hdpi.jpg"
+                        alt=""
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!----------------------------------IMAGEN 3---------------------------------->
+              <div class="col-12 col-lg-4">
+                <img
+                  class="img-fluid shadow my-2 rounded"
+                  src="./assets/img/Nerd/Nerd_3hdpi.jpg"
+                  alt=""
+                  data-bs-toggle="modal"
+                  data-bs-target="#md3"
+                />
+                <!--Modal-->
+                <div class="modal fade" id="md3" tabindex="-1">
+                  <div class="modal-dialog modal-dialog-centered modal-xl">
+                    <div class="modal-content">
+                      <img
+                        class="img-fluid shadow"
+                        src="./assets/img/Nerd/Nerd_3hdpi.jpg"
+                        alt=""
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row text-center mb-3">
+              <!----------------------------------IMAGEN 4---------------------------------->
+              <div class="col-12 col-lg-4">
+                <img
+                  class="img-fluid shadow my-2 rounded"
+                  src="./assets/img/Nerd/Nerd_4hdpi.jpg"
+                  alt=""
+                  data-bs-toggle="modal"
+                  data-bs-target="#md4"
+                />
+                <!--Modal-->
+                <div class="modal fade" id="md4" tabindex="-1">
+                  <div class="modal-dialog modal-dialog-centered modal-xl">
+                    <div class="modal-content">
+                      <img
+                        class="img-fluid shadow"
+                        src="./assets/img/Nerd/Nerd_4hdpi.jpg"
+                        alt=""
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!----------------------------------IMAGEN 5---------------------------------->
+              <div class="col-12 col-lg-4">
+                <img
+                  class="img-fluid shadow my-2 rounded"
+                  src="./assets/img/Nerd/Nerd_5hdpi.jpg"
+                  alt=""
+                  data-bs-toggle="modal"
+                  data-bs-target="#md5"
+                />
+                <!--Modal-->
+                <div class="modal fade" id="md5" tabindex="-1">
+                  <div class="modal-dialog modal-dialog-centered modal-xl">
+                    <div class="modal-content">
+                      <img
+                        class="img-fluid shadow"
+                        src="./assets/img/Nerd/Nerd_5hdpi.jpg"
+                        alt=""
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!----------------------------------IMAGEN 6---------------------------------->
+              <div class="col-12 col-lg-4">
+                <img
+                  class="img-fluid shadow my-2 rounded"
+                  src="./assets/img/Nerd/Nerd_6hdpi.jpg"
+                  alt=""
+                  data-bs-toggle="modal"
+                  data-bs-target="#md6"
+                />
+                <!--Modal-->
+                <div class="modal fade" id="md6" tabindex="-1">
+                  <div class="modal-dialog modal-dialog-centered modal-xl">
+                    <div class="modal-content">
+                      <img
+                        class="img-fluid shadow"
+                        src="./assets/img/Nerd/Nerd_6hdpi.jpg"
+                        alt=""
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <button
+              class="btn btn-light mb-3 w-100"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#nerd-photos"
+              aria-expanded="false"
+              aria-controls="nerd-photos"
+            >
+              Ver más
+            </button>
+
+            <div class="collapse" id="nerd-photos">
+              <!--------------------------------------------------------------------FILA 3-------------------------------------------------------------------->
+              <div class="row align-content-center">
+                <!----------------------------------IMAGEN 7---------------------------------->
+                <div class="col-12 col-lg-2">
                   <img
-                    class="img-fluid shadow"
+                    class="img-fluid shadow my-2 rounded"
                     src="./assets/img/Nerd/Nerd_7hdpi.jpg"
                     alt=""
+                    data-bs-toggle="modal"
+                    data-bs-target="#md7"
                   />
+                  <!--Modal-->
+                  <div class="modal fade" id="md7" tabindex="-1">
+                    <div class="modal-dialog modal-dialog-centered modal-xl">
+                      <div class="modal-content">
+                        <img
+                          class="img-fluid shadow"
+                          src="./assets/img/Nerd/Nerd_7hdpi.jpg"
+                          alt=""
+                        />
+                      </div>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
-          </div>
-          <!----------------------------------IMAGEN 8---------------------------------->
-          <div class="col-12 col-lg-2">
-            <img
-              class="img-fluid shadow my-2"
-              src="./assets/img/Nerd/Nerd_8hdpi.jpg"
-              alt=""
-              data-bs-toggle="modal"
-              data-bs-target="#md8"
-            />
-            <!--Modal-->
-            <div class="modal fade" id="md8" tabindex="-1">
-              <div class="modal-dialog modal-dialog-centered modal-xl">
-                <div class="modal-content">
+                <!----------------------------------IMAGEN 8---------------------------------->
+                <div class="col-12 col-lg-2">
                   <img
-                    class="img-fluid shadow"
+                    class="img-fluid shadow my-2 rounded"
                     src="./assets/img/Nerd/Nerd_8hdpi.jpg"
                     alt=""
+                    data-bs-toggle="modal"
+                    data-bs-target="#md8"
                   />
+                  <!--Modal-->
+                  <div class="modal fade" id="md8" tabindex="-1">
+                    <div class="modal-dialog modal-dialog-centered modal-xl">
+                      <div class="modal-content">
+                        <img
+                          class="img-fluid shadow"
+                          src="./assets/img/Nerd/Nerd_8hdpi.jpg"
+                          alt=""
+                        />
+                      </div>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
-          </div>
-          <!----------------------------------IMAGEN 9---------------------------------->
-          <div class="col-12 col-lg-2">
-            <img
-              class="img-fluid shadow my-2"
-              src="./assets/img/Nerd/Nerd_9hdpi.jpg"
-              alt=""
-              data-bs-toggle="modal"
-              data-bs-target="#md9"
-            />
-            <!--Modal-->
-            <div class="modal fade" id="md9" tabindex="-1">
-              <div class="modal-dialog modal-dialog-centered modal-xl">
-                <div class="modal-content">
+                <!----------------------------------IMAGEN 9---------------------------------->
+                <div class="col-12 col-lg-2">
                   <img
-                    class="img-fluid shadow"
+                    class="img-fluid shadow my-2 rounded"
                     src="./assets/img/Nerd/Nerd_9hdpi.jpg"
                     alt=""
+                    data-bs-toggle="modal"
+                    data-bs-target="#md9"
                   />
+                  <!--Modal-->
+                  <div class="modal fade" id="md9" tabindex="-1">
+                    <div class="modal-dialog modal-dialog-centered modal-xl">
+                      <div class="modal-content">
+                        <img
+                          class="img-fluid shadow"
+                          src="./assets/img/Nerd/Nerd_9hdpi.jpg"
+                          alt=""
+                        />
+                      </div>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
-          </div>
-          <!----------------------------------IMAGEN 10---------------------------------->
-          <div class="col-12 col-lg-2">
-            <img
-              class="img-fluid shadow my-2"
-              src="./assets/img/Nerd/Nerd_10hdpi.jpg"
-              alt=""
-              data-bs-toggle="modal"
-              data-bs-target="#md10"
-            />
-            <!--Modal-->
-            <div class="modal fade" id="md10" tabindex="-1">
-              <div class="modal-dialog modal-dialog-centered modal-xl">
-                <div class="modal-content">
+                <!----------------------------------IMAGEN 10---------------------------------->
+                <div class="col-12 col-lg-2">
                   <img
-                    class="img-fluid shadow"
+                    class="img-fluid shadow my-2 rounded"
                     src="./assets/img/Nerd/Nerd_10hdpi.jpg"
                     alt=""
+                    data-bs-toggle="modal"
+                    data-bs-target="#md10"
                   />
+                  <!--Modal-->
+                  <div class="modal fade" id="md10" tabindex="-1">
+                    <div class="modal-dialog modal-dialog-centered modal-xl">
+                      <div class="modal-content">
+                        <img
+                          class="img-fluid shadow"
+                          src="./assets/img/Nerd/Nerd_10hdpi.jpg"
+                          alt=""
+                        />
+                      </div>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
-          </div>
-          <!----------------------------------IMAGEN 11---------------------------------->
-          <div class="col-12 col-lg-2">
-            <img
-              class="img-fluid shadow my-2"
-              src="./assets/img/Nerd/Nerd_11hdpi.jpg"
-              alt=""
-              data-bs-toggle="modal"
-              data-bs-target="#md11"
-            />
-            <!--Modal-->
-            <div class="modal fade" id="md11" tabindex="-1">
-              <div class="modal-dialog modal-dialog-centered modal-xl">
-                <div class="modal-content">
+                <!----------------------------------IMAGEN 11---------------------------------->
+                <div class="col-12 col-lg-2">
                   <img
-                    class="img-fluid shadow"
+                    class="img-fluid shadow my-2 rounded"
                     src="./assets/img/Nerd/Nerd_11hdpi.jpg"
                     alt=""
+                    data-bs-toggle="modal"
+                    data-bs-target="#md11"
                   />
+                  <!--Modal-->
+                  <div class="modal fade" id="md11" tabindex="-1">
+                    <div class="modal-dialog modal-dialog-centered modal-xl">
+                      <div class="modal-content">
+                        <img
+                          class="img-fluid shadow"
+                          src="./assets/img/Nerd/Nerd_11hdpi.jpg"
+                          alt=""
+                        />
+                      </div>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
-          </div>
-          <!----------------------------------IMAGEN 12---------------------------------->
-          <div class="col-12 col-lg-2">
-            <img
-              class="img-fluid shadow my-2"
-              src="./assets/img/Nerd/Nerd_12hdpi.jpg"
-              alt=""
-              data-bs-toggle="modal"
-              data-bs-target="#md12"
-            />
-            <!--Modal-->
-            <div class="modal fade" id="md12" tabindex="-1">
-              <div class="modal-dialog modal-dialog-centered modal-xl">
-                <div class="modal-content">
+                <!----------------------------------IMAGEN 12---------------------------------->
+                <div class="col-12 col-lg-2">
                   <img
-                    class="img-fluid shadow"
+                    class="img-fluid shadow my-2 rounded"
                     src="./assets/img/Nerd/Nerd_12hdpi.jpg"
                     alt=""
+                    data-bs-toggle="modal"
+                    data-bs-target="#md12"
                   />
+                  <!--Modal-->
+                  <div class="modal fade" id="md12" tabindex="-1">
+                    <div class="modal-dialog modal-dialog-centered modal-xl">
+                      <div class="modal-content">
+                        <img
+                          class="img-fluid shadow"
+                          src="./assets/img/Nerd/Nerd_12hdpi.jpg"
+                          alt=""
+                        />
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-        <!--------------------------------------------------------------------FILA 4-------------------------------------------------------------------->
-        <div class="row align-content-center">
-          <!----------------------------------IMAGEN 13---------------------------------->
-          <div class="col-12 col-lg-2">
-            <img
-              class="img-fluid shadow my-2"
-              src="./assets/img/Nerd/Nerd_13hdpi.jpg"
-              alt=""
-              data-bs-toggle="modal"
-              data-bs-target="#md13"
-            />
-            <!--Modal-->
-            <div class="modal fade" id="md13" tabindex="-1">
-              <div class="modal-dialog modal-dialog-centered modal-xl">
-                <div class="modal-content">
+
+              <!--------------------------------------------------------------------FILA 4-------------------------------------------------------------------->
+              <div class="row align-content-center">
+                <!----------------------------------IMAGEN 13---------------------------------->
+                <div class="col-12 col-lg-2">
                   <img
-                    class="img-fluid shadow"
+                    class="img-fluid shadow my-2 rounded"
                     src="./assets/img/Nerd/Nerd_13hdpi.jpg"
                     alt=""
+                    data-bs-toggle="modal"
+                    data-bs-target="#md13"
                   />
+                  <!--Modal-->
+                  <div class="modal fade" id="md13" tabindex="-1">
+                    <div class="modal-dialog modal-dialog-centered modal-xl">
+                      <div class="modal-content">
+                        <img
+                          class="img-fluid shadow"
+                          src="./assets/img/Nerd/Nerd_13hdpi.jpg"
+                          alt=""
+                        />
+                      </div>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
-          </div>
-          <!----------------------------------IMAGEN 14---------------------------------->
-          <div class="col-12 col-lg-2">
-            <img
-              class="img-fluid shadow my-2"
-              src="./assets/img/Nerd/Nerd_14hdpi.jpg"
-              alt=""
-              data-bs-toggle="modal"
-              data-bs-target="#md14"
-            />
-            <!--Modal-->
-            <div class="modal fade" id="md14" tabindex="-1">
-              <div class="modal-dialog modal-dialog-centered modal-xl">
-                <div class="modal-content">
+                <!----------------------------------IMAGEN 14---------------------------------->
+                <div class="col-12 col-lg-2">
                   <img
-                    class="img-fluid shadow"
+                    class="img-fluid shadow my-2 rounded"
                     src="./assets/img/Nerd/Nerd_14hdpi.jpg"
                     alt=""
+                    data-bs-toggle="modal"
+                    data-bs-target="#md14"
                   />
+                  <!--Modal-->
+                  <div class="modal fade" id="md14" tabindex="-1">
+                    <div class="modal-dialog modal-dialog-centered modal-xl">
+                      <div class="modal-content">
+                        <img
+                          class="img-fluid shadow"
+                          src="./assets/img/Nerd/Nerd_14hdpi.jpg"
+                          alt=""
+                        />
+                      </div>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
-          </div>
-          <!----------------------------------IMAGEN 15---------------------------------->
-          <div class="col-12 col-lg-2">
-            <img
-              class="img-fluid shadow my-2"
-              src="./assets/img/Nerd/Nerd_15hdpi.jpg"
-              alt=""
-              data-bs-toggle="modal"
-              data-bs-target="#md15"
-            />
-            <!--Modal-->
-            <div class="modal fade" id="md15" tabindex="-1">
-              <div class="modal-dialog modal-dialog-centered modal-xl">
-                <div class="modal-content">
+                <!----------------------------------IMAGEN 15---------------------------------->
+                <div class="col-12 col-lg-2">
                   <img
-                    class="img-fluid shadow"
+                    class="img-fluid shadow my-2 rounded"
                     src="./assets/img/Nerd/Nerd_15hdpi.jpg"
                     alt=""
+                    data-bs-toggle="modal"
+                    data-bs-target="#md15"
                   />
+                  <!--Modal-->
+                  <div class="modal fade" id="md15" tabindex="-1">
+                    <div class="modal-dialog modal-dialog-centered modal-xl">
+                      <div class="modal-content">
+                        <img
+                          class="img-fluid shadow"
+                          src="./assets/img/Nerd/Nerd_15hdpi.jpg"
+                          alt=""
+                        />
+                      </div>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
-          </div>
-          <!----------------------------------IMAGEN 16---------------------------------->
-          <div class="col-12 col-lg-2">
-            <img
-              class="img-fluid shadow my-2"
-              src="./assets/img/Nerd/Nerd_16hdpi.jpg"
-              alt=""
-              data-bs-toggle="modal"
-              data-bs-target="#md16"
-            />
-            <!--Modal-->
-            <div class="modal fade" id="md16" tabindex="-1">
-              <div class="modal-dialog modal-dialog-centered modal-xl">
-                <div class="modal-content">
+                <!----------------------------------IMAGEN 16---------------------------------->
+                <div class="col-12 col-lg-2">
                   <img
-                    class="img-fluid shadow"
+                    class="img-fluid shadow my-2 rounded"
                     src="./assets/img/Nerd/Nerd_16hdpi.jpg"
                     alt=""
+                    data-bs-toggle="modal"
+                    data-bs-target="#md16"
                   />
+                  <!--Modal-->
+                  <div class="modal fade" id="md16" tabindex="-1">
+                    <div class="modal-dialog modal-dialog-centered modal-xl">
+                      <div class="modal-content">
+                        <img
+                          class="img-fluid shadow"
+                          src="./assets/img/Nerd/Nerd_16hdpi.jpg"
+                          alt=""
+                        />
+                      </div>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
-          </div>
-          <!----------------------------------IMAGEN 17---------------------------------->
-          <div class="col-12 col-lg-2">
-            <img
-              class="img-fluid shadow my-2"
-              src="./assets/img/Nerd/Nerd_17hdpi.jpg"
-              alt=""
-              data-bs-toggle="modal"
-              data-bs-target="#md17"
-            />
-            <!--Modal-->
-            <div class="modal fade" id="md17" tabindex="-1">
-              <div class="modal-dialog modal-dialog-centered modal-xl">
-                <div class="modal-content">
+                <!----------------------------------IMAGEN 17---------------------------------->
+                <div class="col-12 col-lg-2">
                   <img
-                    class="img-fluid shadow"
+                    class="img-fluid shadow my-2 rounded"
                     src="./assets/img/Nerd/Nerd_17hdpi.jpg"
                     alt=""
+                    data-bs-toggle="modal"
+                    data-bs-target="#md17"
                   />
+                  <!--Modal-->
+                  <div class="modal fade" id="md17" tabindex="-1">
+                    <div class="modal-dialog modal-dialog-centered modal-xl">
+                      <div class="modal-content">
+                        <img
+                          class="img-fluid shadow"
+                          src="./assets/img/Nerd/Nerd_17hdpi.jpg"
+                          alt=""
+                        />
+                      </div>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
-          </div>
-          <!----------------------------------IMAGEN 18---------------------------------->
-          <div class="col-12 col-lg-2">
-            <img
-              class="img-fluid shadow my-2"
-              src="./assets/img/Nerd/Nerd_18hdpi.jpg"
-              alt=""
-              data-bs-toggle="modal"
-              data-bs-target="#md18"
-            />
-            <!--Modal-->
-            <div class="modal fade" id="md18" tabindex="-1">
-              <div class="modal-dialog modal-dialog-centered modal-xl">
-                <div class="modal-content">
+                <!----------------------------------IMAGEN 18---------------------------------->
+                <div class="col-12 col-lg-2">
                   <img
-                    class="img-fluid shadow"
+                    class="img-fluid shadow my-2 rounded"
                     src="./assets/img/Nerd/Nerd_18hdpi.jpg"
                     alt=""
+                    data-bs-toggle="modal"
+                    data-bs-target="#md18"
                   />
+                  <!--Modal-->
+                  <div class="modal fade" id="md18" tabindex="-1">
+                    <div class="modal-dialog modal-dialog-centered modal-xl">
+                      <div class="modal-content">
+                        <img
+                          class="img-fluid shadow"
+                          src="./assets/img/Nerd/Nerd_18hdpi.jpg"
+                          alt=""
+                        />
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-        <!--------------------------------------------------------------------FILA 5-------------------------------------------------------------------->
-        <div class="row align-content-center">
-          <!----------------------------------IMAGEN 19---------------------------------->
-          <div class="col-12 col-lg-2">
-            <img
-              class="img-fluid shadow my-2"
-              src="./assets/img/Nerd/Nerd_19hdpi.jpg"
-              alt=""
-              data-bs-toggle="modal"
-              data-bs-target="#md19"
-            />
-            <!--Modal-->
-            <div class="modal fade" id="md19" tabindex="-1">
-              <div class="modal-dialog modal-dialog-centered modal-xl">
-                <div class="modal-content">
+
+              <!--------------------------------------------------------------------FILA 5-------------------------------------------------------------------->
+              <div class="row align-content-center">
+                <!----------------------------------IMAGEN 19---------------------------------->
+                <div class="col-12 col-lg-2">
                   <img
-                    class="img-fluid shadow"
+                    class="img-fluid shadow my-2 rounded"
                     src="./assets/img/Nerd/Nerd_19hdpi.jpg"
                     alt=""
+                    data-bs-toggle="modal"
+                    data-bs-target="#md19"
                   />
+                  <!--Modal-->
+                  <div class="modal fade" id="md19" tabindex="-1">
+                    <div class="modal-dialog modal-dialog-centered modal-xl">
+                      <div class="modal-content">
+                        <img
+                          class="img-fluid shadow"
+                          src="./assets/img/Nerd/Nerd_19hdpi.jpg"
+                          alt=""
+                        />
+                      </div>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
-          </div>
-          <!----------------------------------IMAGEN 20---------------------------------->
-          <div class="col-12 col-lg-2">
-            <img
-              class="img-fluid shadow my-2"
-              src="./assets/img/Nerd/Nerd_20hdpi.jpg"
-              alt=""
-              data-bs-toggle="modal"
-              data-bs-target="#md20"
-            />
-            <!--Modal-->
-            <div class="modal fade" id="md20" tabindex="-1">
-              <div class="modal-dialog modal-dialog-centered modal-xl">
-                <div class="modal-content">
+                <!----------------------------------IMAGEN 20---------------------------------->
+                <div class="col-12 col-lg-2">
                   <img
-                    class="img-fluid shadow"
+                    class="img-fluid shadow my-2 rounded"
                     src="./assets/img/Nerd/Nerd_20hdpi.jpg"
                     alt=""
+                    data-bs-toggle="modal"
+                    data-bs-target="#md20"
                   />
+                  <!--Modal-->
+                  <div class="modal fade" id="md20" tabindex="-1">
+                    <div class="modal-dialog modal-dialog-centered modal-xl">
+                      <div class="modal-content">
+                        <img
+                          class="img-fluid shadow"
+                          src="./assets/img/Nerd/Nerd_20hdpi.jpg"
+                          alt=""
+                        />
+                      </div>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
-          </div>
-          <!----------------------------------IMAGEN 21---------------------------------->
-          <div class="col-12 col-lg-2">
-            <img
-              class="img-fluid shadow my-2"
-              src="./assets/img/Nerd/Nerd_21hdpi.jpg"
-              alt=""
-              data-bs-toggle="modal"
-              data-bs-target="#md21"
-            />
-            <!--Modal-->
-            <div class="modal fade" id="md21" tabindex="-1">
-              <div class="modal-dialog modal-dialog-centered modal-xl">
-                <div class="modal-content">
+                <!----------------------------------IMAGEN 21---------------------------------->
+                <div class="col-12 col-lg-2">
                   <img
-                    class="img-fluid shadow"
+                    class="img-fluid shadow my-2 rounded"
                     src="./assets/img/Nerd/Nerd_21hdpi.jpg"
                     alt=""
+                    data-bs-toggle="modal"
+                    data-bs-target="#md21"
                   />
+                  <!--Modal-->
+                  <div class="modal fade" id="md21" tabindex="-1">
+                    <div class="modal-dialog modal-dialog-centered modal-xl">
+                      <div class="modal-content">
+                        <img
+                          class="img-fluid shadow"
+                          src="./assets/img/Nerd/Nerd_21hdpi.jpg"
+                          alt=""
+                        />
+                      </div>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
-          </div>
-          <!----------------------------------IMAGEN 22---------------------------------->
-          <div class="col-12 col-lg-2">
-            <img
-              class="img-fluid shadow my-2"
-              src="./assets/img/Nerd/Nerd_22hdpi.jpg"
-              alt=""
-              data-bs-toggle="modal"
-              data-bs-target="#md22"
-            />
-            <!--Modal-->
-            <div class="modal fade" id="md22" tabindex="-1">
-              <div class="modal-dialog modal-dialog-centered modal-xl">
-                <div class="modal-content">
+                <!----------------------------------IMAGEN 22---------------------------------->
+                <div class="col-12 col-lg-2">
                   <img
-                    class="img-fluid shadow"
+                    class="img-fluid shadow my-2 rounded"
                     src="./assets/img/Nerd/Nerd_22hdpi.jpg"
                     alt=""
+                    data-bs-toggle="modal"
+                    data-bs-target="#md22"
                   />
+                  <!--Modal-->
+                  <div class="modal fade" id="md22" tabindex="-1">
+                    <div class="modal-dialog modal-dialog-centered modal-xl">
+                      <div class="modal-content">
+                        <img
+                          class="img-fluid shadow"
+                          src="./assets/img/Nerd/Nerd_22hdpi.jpg"
+                          alt=""
+                        />
+                      </div>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
-          </div>
-          <!----------------------------------IMAGEN 23---------------------------------->
-          <div class="col-12 col-lg-2">
-            <img
-              class="img-fluid shadow my-2"
-              src="./assets/img/Nerd/Nerd_23hdpi.jpg"
-              alt=""
-              data-bs-toggle="modal"
-              data-bs-target="#md23"
-            />
-            <!--Modal-->
-            <div class="modal fade" id="md23" tabindex="-1">
-              <div class="modal-dialog modal-dialog-centered modal-xl">
-                <div class="modal-content">
+                <!----------------------------------IMAGEN 23---------------------------------->
+                <div class="col-12 col-lg-2">
                   <img
-                    class="img-fluid shadow"
+                    class="img-fluid shadow my-2 rounded"
                     src="./assets/img/Nerd/Nerd_23hdpi.jpg"
                     alt=""
+                    data-bs-toggle="modal"
+                    data-bs-target="#md23"
                   />
+                  <!--Modal-->
+                  <div class="modal fade" id="md23" tabindex="-1">
+                    <div class="modal-dialog modal-dialog-centered modal-xl">
+                      <div class="modal-content">
+                        <img
+                          class="img-fluid shadow"
+                          src="./assets/img/Nerd/Nerd_23hdpi.jpg"
+                          alt=""
+                        />
+                      </div>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
-          </div>
-          <!----------------------------------IMAGEN 24---------------------------------->
-          <div class="col-12 col-lg-2">
-            <img
-              class="img-fluid shadow my-2"
-              src="./assets/img/Nerd/Nerd_24hdpi.jpg"
-              alt=""
-              data-bs-toggle="modal"
-              data-bs-target="#md24"
-            />
-            <!--Modal-->
-            <div class="modal fade" id="md24" tabindex="-1">
-              <div class="modal-dialog modal-dialog-centered modal-xl">
-                <div class="modal-content">
+                <!----------------------------------IMAGEN 24---------------------------------->
+                <div class="col-12 col-lg-2">
                   <img
-                    class="img-fluid shadow"
+                    class="img-fluid shadow my-2 rounded"
                     src="./assets/img/Nerd/Nerd_24hdpi.jpg"
                     alt=""
+                    data-bs-toggle="modal"
+                    data-bs-target="#md24"
                   />
+                  <!--Modal-->
+                  <div class="modal fade" id="md24" tabindex="-1">
+                    <div class="modal-dialog modal-dialog-centered modal-xl">
+                      <div class="modal-content">
+                        <img
+                          class="img-fluid shadow"
+                          src="./assets/img/Nerd/Nerd_24hdpi.jpg"
+                          alt=""
+                        />
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-        <!--------------------------------------------------------------------FILA 6-------------------------------------------------------------------->
-        <div class="row align-content-center">
-          <!----------------------------------IMAGEN 25---------------------------------->
-          <div class="col-12 col-lg-4">
-            <img
-              class="img-fluid shadow my-2"
-              src="./assets/img/Nerd/Nerd_25hdpi.jpg"
-              alt=""
-              data-bs-toggle="modal"
-              data-bs-target="#md25"
-            />
-            <!--Modal-->
-            <div class="modal fade" id="md25" tabindex="-1">
-              <div class="modal-dialog modal-dialog-centered modal-xl">
-                <div class="modal-content">
+
+              <!--------------------------------------------------------------------FILA 6-------------------------------------------------------------------->
+              <div class="row align-content-center">
+                <!----------------------------------IMAGEN 25---------------------------------->
+                <div class="col-12 col-lg-4">
                   <img
-                    class="img-fluid shadow"
+                    class="img-fluid shadow my-2 rounded"
                     src="./assets/img/Nerd/Nerd_25hdpi.jpg"
                     alt=""
+                    data-bs-toggle="modal"
+                    data-bs-target="#md25"
                   />
+                  <!--Modal-->
+                  <div class="modal fade" id="md25" tabindex="-1">
+                    <div class="modal-dialog modal-dialog-centered modal-xl">
+                      <div class="modal-content">
+                        <img
+                          class="img-fluid shadow"
+                          src="./assets/img/Nerd/Nerd_25hdpi.jpg"
+                          alt=""
+                        />
+                      </div>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
-          </div>
-          <!----------------------------------IMAGEN 26---------------------------------->
-          <div class="col-12 col-lg-4">
-            <img
-              class="img-fluid shadow my-2"
-              src="./assets/img/Nerd/Nerd_26hdpi.jpg"
-              alt=""
-              data-bs-toggle="modal"
-              data-bs-target="#md26"
-            />
-            <!--Modal-->
-            <div class="modal fade" id="md26" tabindex="-1">
-              <div class="modal-dialog modal-dialog-centered modal-xl">
-                <div class="modal-content">
+                <!----------------------------------IMAGEN 26---------------------------------->
+                <div class="col-12 col-lg-4">
                   <img
-                    class="img-fluid shadow"
+                    class="img-fluid shadow my-2 rounded"
                     src="./assets/img/Nerd/Nerd_26hdpi.jpg"
                     alt=""
+                    data-bs-toggle="modal"
+                    data-bs-target="#md26"
                   />
+                  <!--Modal-->
+                  <div class="modal fade" id="md26" tabindex="-1">
+                    <div class="modal-dialog modal-dialog-centered modal-xl">
+                      <div class="modal-content">
+                        <img
+                          class="img-fluid shadow"
+                          src="./assets/img/Nerd/Nerd_26hdpi.jpg"
+                          alt=""
+                        />
+                      </div>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
-          </div>
-          <!----------------------------------IMAGEN 27---------------------------------->
-          <div class="col-12 col-lg-4">
-            <img
-              class="img-fluid shadow my-2"
-              src="./assets/img/Nerd/Nerd_27hdpi.jpg"
-              alt=""
-              data-bs-toggle="modal"
-              data-bs-target="#md27"
-            />
-            <!--Modal-->
-            <div class="modal fade" id="md27" tabindex="-1">
-              <div class="modal-dialog modal-dialog-centered modal-xl">
-                <div class="modal-content">
+                <!----------------------------------IMAGEN 27---------------------------------->
+                <div class="col-12 col-lg-4">
                   <img
-                    class="img-fluid shadow"
+                    class="img-fluid shadow my-2 rounded"
                     src="./assets/img/Nerd/Nerd_27hdpi.jpg"
                     alt=""
+                    data-bs-toggle="modal"
+                    data-bs-target="#md27"
                   />
+                  <!--Modal-->
+                  <div class="modal fade" id="md27" tabindex="-1">
+                    <div class="modal-dialog modal-dialog-centered modal-xl">
+                      <div class="modal-content">
+                        <img
+                          class="img-fluid shadow"
+                          src="./assets/img/Nerd/Nerd_27hdpi.jpg"
+                          alt=""
+                        />
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
+      <section class="container">
+        <div class="row my-3 pt-5">
+          <div class="col-12 col-lg-3">
+            <img
+              class="img-fluid shadow my-2"
+              src="./assets/img/PharmaCards/Logo.png"
+              alt=""
+              data-bs-toggle="modal"
+              data-bs-target="#pl"
+            />
 
-      <div>
+            <!--Modal-->
+            <div class="modal fade" id="pl" tabindex="-1">
+              <div class="modal-dialog modal-dialog-centered modal-sm">
+                <div class="modal-content">
+                  <img
+                    class="img-fluid shadow"
+                    src="./assets/img/PharmaCards/Logo.png"
+                    alt=""
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-lg-9">
+            <h2 class="text-end text-title">PharmaCards</h2>
+            <h4 class="text-end">C# | .NET 8 | AvaloniaUI | SQLite</h4>
+            <p class="align-self-center">
+              “Quiero un lugar donde anotar los animes que he visto, pero algo
+              más que un Word o un Excel”. Con esa sencilla frase se dió el
+              génesis de este proyecto, el cual terminó poco a poco,
+              transformándose en un Goliat de proporciones totalmente fuera del
+              plan de desarrollo que había visionado en un principio el cliente,
+              pero he de admitir que, nunca estuve reacio a aceptar los desafíos
+              que se requerían del sistema, mientras más avanzaba en el
+              proyecto, más ideas surgían, más problemas aparecían y mayor
+              cantidad de soluciones se entregaban. Llegado a cierto punto yo
+              mismo incluí una considerable cantidad de funciones opcionales,
+              todo con tal de poder darle al usuario el mejor sistema que podría
+              haber creado en ese momento.
+            </p>
+          </div>
+        </div>
+      </section>
+      <div class="container">
         <h4 id="scrollspyHeading2">Second heading</h4>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero eum
@@ -808,7 +859,7 @@
           pariatur delectus culpa maxime eligendi quidem sunt! Dolorem.
         </p>
       </div>
-      <div id="Formulario" class="align-content-center">
+      <div id="Formulario" class="container align-content-center">
         <div class="row">
           <div class="col text-center">
             <h1 class="display-1 big-text">¿Hablamos?</h1>
@@ -846,6 +897,14 @@
         </div>
       </div>
     </main>
+    <footer class="align-content-center text-center">
+      <img
+        src="./assets/img/PORTAFOLIO_PORTADA.svg"
+        id="footer-logo"
+        alt=""
+        srcset=""
+      />
+    </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js
     "></script>
     <script src="./assets/js/script.js"></script>
