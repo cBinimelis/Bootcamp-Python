@@ -48,6 +48,13 @@ footer {
 .text-title {
   font-size: 3rem;
 }
+
+.kz-bg {
+  color: white;
+  font-weight: 500;
+  background-color: #b7144e;
+}
+
 #Logo {
   display: none;
   height: 30vh;
@@ -60,8 +67,4 @@ footer {
 
 #footer-logo {
   max-height: 90vh;
-}
-
-#projects {
-  background-color: #b7144e;
 }
