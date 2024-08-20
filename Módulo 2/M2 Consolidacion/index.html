@@ -1498,16 +1498,26 @@
             </p>
           </div>
           <div class="col">
-            <form action="">
+            <form id="contactForm">
+              <div class="form-floating mb-3">
+                <input
+                  type="text"
+                  class="form-control"
+                  id="nombre"
+                  placeholder="John Doe"
+                />
+                <label for="mail">Primero que todo ¿Cómo te llamas?</label>
+              </div>
               <div class="form-floating mb-3">
                 <input
                   type="email"
                   class="form-control"
                   id="mail"
                   placeholder="name@example.com"
-                  value="correo_de@ejemplo.com"
                 />
-                <label for="mail">Tu correo</label>
+                <label for="mail"
+                  >Déjame tu correo para poder contactarte</label
+                >
               </div>
               <div class="form-floating mb-3">
                 <input
@@ -1515,12 +1525,13 @@
                   class="form-control"
                   id="mensaje"
                   placeholder="¡Hola!"
-                  value="¡Hola! Necesito tu ayuda con..."
                 />
-                <label for="Mensaje">¿En qué puedo ayudarte?</label>
+                <label for="mensaje">Y dime ¿En qué puedo ayudarte?</label>
               </div>
               <div class="col-12">
-                <button type="submit" class="btn kz-bg w-25">Enviar</button>
+                <button id="btnForm" type="submit" class="btn kz-bg w-25">
+                  Enviar
+                </button>
               </div>
             </form>
           </div>
@@ -1538,5 +1549,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js
     "></script>
     <script src="./assets/js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   </body>
 </html>
