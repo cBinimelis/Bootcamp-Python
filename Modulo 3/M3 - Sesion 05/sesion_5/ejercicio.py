@@ -1,9 +1,9 @@
-#Crear conjunto
+# Crear conjunto
 conjunto_c = {1, 2, 3, 4, 5}
 print("Conjunto C: ", conjunto_c)
 
 # Checkear si existe 3
-if (3 in conjunto_c):
+if 3 in conjunto_c:
     print("3 si pertenece al conjunto!")
 
 # Eliminar 4
@@ -21,12 +21,22 @@ print("Conjunto C: ", conjunto_c)
 print("Conjunto D: ", conjunto_d)
 
 
-#--------------------------------------------------------------
+# --------------------------------------------------------------
 stock = ["Peras", "Manzanas", "Uvas"]
-vendidos = ["Peras","Peras","Peras","Uvas","Uvas","Uvas","Limon","Limon","Limon"]
+vendidos = [
+    "Peras",
+    "Peras",
+    "Peras",
+    "Uvas",
+    "Uvas",
+    "Uvas",
+    "Limon",
+    "Limon",
+    "Limon",
+]
 
 stock_list = set(stock)
 vendidos_list = set(vendidos)
 
-sin_stock= vendidos_list - stock_list
+sin_stock = vendidos_list - stock_list
 print(sin_stock)
