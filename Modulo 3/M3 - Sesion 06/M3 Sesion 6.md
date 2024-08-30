@@ -1,4 +1,4 @@
-# Módulo III - Sesión IV
+# Módulo III - Sesión VI
 
 ## Agenda
 
