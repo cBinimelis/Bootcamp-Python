@@ -5,6 +5,8 @@ while True:
     tries = 1
     winner = False
 
+    print("Juguemos a las adivinanzas, tienes 3 intentos")
+
     for i in range(3):
         print("Intento #", tries)
         guess = int(input("Elige un número del 1 al 10: "))
