@@ -1,7 +1,31 @@
 # Parte 1: Cargar los datos
 def cargar_datos(lineas_archivo):
-    # Completar
-    pass
+    peliculas = list(lineas_archivo)
+    filtro_generos = set()
+    generos_peliculas = list()
+    peliculas_genero = list()
+    info_peliculas = list()
+
+    for pelicula in peliculas:
+        info = pelicula.split(",")
+
+        generos = info[4].split(";")
+        for genero in generos:
+            filtro_generos.add(genero)
+        info_peliculas.append((info[0], info[1], info[2], info[3], generos))
+
+    # Cargar generos a la lista
+    for genero in filtro_generos:
+        generos_peliculas.append(genero)
+
+    for genero in filtro_generos:
+        lista_peliculas = list()
+        for pelicula in info_peliculas:
+            if genero in pelicula[4]:
+                lista_peliculas.append(pelicula[0])
+        peliculas_genero.append((genero, lista_peliculas))
+
+    return generos_peliculas, peliculas_genero, info_peliculas
 
 
 # Parte 2: Completar las consultas
