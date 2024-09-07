@@ -8,11 +8,14 @@ def cargar_datos(lineas_archivo):
 
     for pelicula in peliculas:
         info = pelicula.split(",")
-
+        nombre = info[0]
+        popularidad = info[1]
+        puntaje = info[2]
+        votos = info[3]
         generos = info[4].split(";")
         for genero in generos:
             filtro_generos.add(genero)
-        info_peliculas.append((info[0], info[1], info[2], info[3], generos))
+        info_peliculas.append((nombre, popularidad, puntaje, votos, generos))
 
     # Cargar generos a la lista
     for genero in filtro_generos:
@@ -32,13 +35,28 @@ def cargar_datos(lineas_archivo):
 def obtener_puntaje_y_votos(nombre_pelicula):
     # Cargar las lineas con la data del archivo
     lineas_archivo = leer_archivo()
-    # Completar con lo que falta aquí
-    pass
+    puntaje_y_votos = None
+    peliculas = list(lineas_archivo)
+    for pelicula in peliculas:
+        info = pelicula.split(",")
+        if nombre_pelicula in info[0]:
+            puntaje = info[2]
+            votos = info[3]
+            puntaje_y_votos = puntaje, votos
+    return puntaje_y_votos
 
 
 def filtrar_y_ordenar(genero_pelicula):
     # Cargar las lineas con la data del archivo
     lineas_archivo = leer_archivo()
+    peliculas = list(lineas_archivo)
+    filtro_generos = set()
+
+    for pelicula in peliculas:
+        info = pelicula.split(",")
+        generos = info[4].split(";")
+        for genero in generos:
+            filtro_generos.add(genero)
     # Completar con lo que falta aquí
     pass
 
@@ -46,6 +64,7 @@ def filtrar_y_ordenar(genero_pelicula):
 def obtener_estadisticas(genero_pelicula, criterio):
     # Cargar las lineas con la data del archivo
     lineas_archivo = leer_archivo()
+    peliculas = list(lineas_archivo)
     # Completar con lo que falta aquí
     pass
 
