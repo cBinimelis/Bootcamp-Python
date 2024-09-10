@@ -50,23 +50,55 @@ def filtrar_y_ordenar(genero_pelicula):
     # Cargar las lineas con la data del archivo
     lineas_archivo = leer_archivo()
     peliculas = list(lineas_archivo)
-    filtro_generos = set()
+    listado_peliculas = list()
 
     for pelicula in peliculas:
         info = pelicula.split(",")
         generos = info[4].split(";")
         for genero in generos:
-            filtro_generos.add(genero)
-    # Completar con lo que falta aquí
-    pass
+            if genero_pelicula in genero:
+                listado_peliculas.append(info[0])
+                break
+
+    listado_peliculas.sort(reverse=True)
+    return listado_peliculas
 
 
 def obtener_estadisticas(genero_pelicula, criterio):
     # Cargar las lineas con la data del archivo
     lineas_archivo = leer_archivo()
     peliculas = list(lineas_archivo)
-    # Completar con lo que falta aquí
-    pass
+    maximo = 0
+    minimo = 9999999
+    promedio = 0
+    suma = 0
+    opcion = 0
+    total_peliculas = 0
+    redondeo = 0
+    if criterio == "popularidad":
+        opcion = 1
+        redondeo = 3
+    elif criterio == "voto promedio":
+        opcion = 2
+        redondeo = 1
+    else:
+        opcion = 3
+
+    for pelicula in peliculas:
+        info = pelicula.split(",")
+        generos = info[4].split(";")
+        for genero in generos:
+            if genero_pelicula in genero:
+                total_peliculas += 1
+                valor = float(info[opcion])
+                suma += valor
+                if valor > maximo:
+                    maximo = valor
+                if valor < minimo:
+                    minimo = valor
+
+    promedio = suma / total_peliculas
+    return [maximo, minimo, round(promedio, redondeo)]
 
 
 # NO ES NECESARIO MODIFICAR DESDE AQUI HACIA ABAJO
