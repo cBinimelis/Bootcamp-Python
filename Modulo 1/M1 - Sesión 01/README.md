@@ -200,4 +200,4 @@ Según la Oficina de Estadísticas Laborales de EE.UU se prevé que el empleo de
 - Accesibilidad
 - Motivación
 - Persistencia
-- Autoaprendizaje
+- Auto-aprendizaje

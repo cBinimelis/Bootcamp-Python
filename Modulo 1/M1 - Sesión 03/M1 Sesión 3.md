@@ -1,4 +1,4 @@
-# Módulo I - Sesion III
+# Módulo I - Sesión III
 
 ## Agenda
 
@@ -22,7 +22,7 @@
 - Trabajando duro
   > Importancia del trabajo individual y la práctica constante.
 - Equipo
-  > Interaccion con instructores y compañeros.
+  > Interacción con instructores y compañeros.
 - Plataforma
   > Uso de plataformas LMS (Learning Management System)
 
@@ -36,7 +36,7 @@
   > - Enfoque en el trabajo duro y la persistencia.
   > - Importancia de la mentalidad de crecimiento.
 
-### Claves para el exito
+### Claves para el éxito
 
 - Personal: Necesidad de persistencia y dedicación.
 - Constancia: Importancia del esfuerzo constante.
@@ -47,23 +47,23 @@
 
 Miedo
 
-- Educacion y conocimiento.
+- Educación y conocimiento.
 - Practica y experiencia.
 - Mente abierta y aprendizaje continuo.
 
 Temor
 
-- Analisis racional.
-- Planificacion y preparación.
+- Análisis racional.
+- Planificación y preparación.
 - Apoyo y colaboración.
 
 Fracaso
 
 - Cambio de perspectiva.
 - Iteración y mejora continua.
-- Resilencia y persistencia.
+- Resiliencia y persistencia.
 
-> Superar el miedo, el temor y el fracaso en la programacion imlpica tanto habilidades técnicas como emocionales. La combinación de educación continua, práctica deliberada y una mentalidad resilente puede ayudarte a enfrentar estos desafios de manera efectiva y constructiva.
+> Superar el miedo, el temor y el fracaso en la programación implica tanto habilidades técnicas como emocionales. La combinación de educación continua, práctica deliberada y una mentalidad resiliente puede ayudarte a enfrentar estos desafíos de manera efectiva y constructiva.
 
 ---
 

@@ -86,14 +86,14 @@ Existen distintas conexiones dentro de las conexiones de la web, por ejemplo:
 > Los protocolos de comunicación son las normas y reglas para enviar y recibir información.
 
 - HTTP: _Hyper Text Transfer Protocol_
-- HTTPS: _Hyper Text Tranfer Protocol Secure_
+- HTTPS: _Hyper Text Transfer Protocol Secure_
 - FTP: _File Transfer Protocol_
 - SFTP: _Secure File Transfer Protocol_
 - SMTP: _Simple Mail Transfer Protocol_
 
 ---
 
-## Currícula de curso
+## Curricula de curso
 
 Este curso tiene como objetivo prepararte para convertirte en un desarrollador Full Stack Python. Para lograr este objetivo, este curso ha sido diseñado para aprender paso a paso los aspectos fundamentales del desarrollo. Mediante videos, ejercicios y desafíos podrás poner en práctica todo lo aprendido.
 

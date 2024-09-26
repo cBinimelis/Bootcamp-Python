@@ -12,7 +12,7 @@ Son las acciones combinadas de un grupo de personas que trabajan juntas de maner
 
 **Importancias**
 
-- Proyectos de gran envergaduyra requieren la colaboración de múltiples desarrolladores.
+- Proyectos de gran envergadura requieren la colaboración de múltiples desarrolladores.
 - Permite dividir problemas grandes en problemas más pequeños y manejables.
 - Facilita la gestión de proyectos complejos y extensos.
 
@@ -26,7 +26,7 @@ Son las acciones combinadas de un grupo de personas que trabajan juntas de maner
 
 Beneficios:
 
-- **Mejora de la productividad:** Equipos bien organizados alcanzan objetivos más rapidamente.
+- **Mejora de la productividad:** Equipos bien organizados alcanzan objetivos más rápidamente.
 
 - **Reducción del estrés:** Compartir responsabilidades equitativamente.
 
@@ -34,18 +34,18 @@ Beneficios:
 
 ## Autodidacta
 
-- Ser autodidacta no significa evitar la educacion formal, sin tomar la iniciativa en tu propio aprendizaje y desarrollo profesional.
+- Ser autodidacta no significa evitar la educación formal, sin tomar la iniciativa en tu propio aprendizaje y desarrollo profesional.
 - Importa: La tecnología y las herramientas evolucionan rápidamente.
 - Importa: Los profesionales necesitan actualizar constantemente sus habilidades y conocimientos.
 
 ### ¿Cómo ser autodidacta?
 
-- **Recopilacion de Información:** material del curso, libros, videos, tutoriales online y discusiones en foros.
-- **Aplicación del Conocimiento:** PLractica con ejercicios, proyectos personales y contribuciones a proyectyos de código abierto.
+- **Recopilación de Información:** material del curso, libros, videos, tutoriales online y discusiones en foros.
+- **Aplicación del Conocimiento:** Practica con ejercicios, proyectos personales y contribuciones a proyectos de código abierto.
 
 Beneficios
 
-- Resolucion de problemas
+- Resolución de problemas
 - Comprensión profunda
 - Aprendizaje de algoritmos y metodologías únicas
 - Desarrollo de habilidades relacionadas
@@ -57,11 +57,11 @@ Estrategias
 - Buscar retroalimentación
 - Mantener la motivación
 
-## Etica
+## Ética
 
 - La ética profesional TI se refiere a los principios y estándares que guían el comportamiento de los profesionales de la información.
-- IEEE Compromiso con el bienestar de la humnanidad. Honradez y sinceridad en todas las actividades. Mejora continua en competencias y habilidades.
-- Iporta: Los profesionales necesitan actualizar constantemente sus habilidades y conocimientos.
+- IEEE Compromiso con el bienestar de la humanidad. Honradez y sinceridad en todas las actividades. Mejora continua en competencias y habilidades.
+- Importa: Los profesionales necesitan actualizar constantemente sus habilidades y conocimientos.
 
 Principios
 
@@ -72,9 +72,9 @@ Principios
 
 ### Casos
 
-- Violacion de la privacidad de datos en una empresa de tecnología.
-- Acceso a la información sensible limitado segúin roles
-- Capacitación para informar los riesgos legales invoolucrados en el trafico de data.
+- Violación de la privacidad de datos en una empresa de tecnología.
+- Acceso a la información sensible limitado según roles
+- Capacitación para informar los riesgos legales involucrados en el trafico de data.
 - Sobornos y conflictos de interés en proyectos de TI.
 
 ---
@@ -95,7 +95,7 @@ El principal objetivo del trabajo en equipo es compartir ideas y responsabilidad
 - Dar y aceptar comentarios
 - Saber cuando liderar y cuando dar un paso atrás.
 
-### Autoaprendizaje
+### Auto-aprendizaje
 
 Ser un programador autodidacta no significa no ir a ninguna escuela o no seguir a ningún instructor, sino que simplemente significa que no esperas a que alguien tome iniciativas en tu nombre y te preparas para sobresalir en tu código por cualquier medio, ya sea material del curso, libros, videos, discusiones, etc.
 
