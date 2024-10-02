@@ -1,0 +1,2 @@
+01,Rose,True
+02,Maria,False
