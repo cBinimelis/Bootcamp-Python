@@ -1,21 +1,41 @@
 ##############################################################
 from random import randint, choice
+
 ## Si necesita agregar imports, debe agregarlos aquí arriba ##
 
 
 ### INICIO PARTE 1.1 ###
 class Plato:
-    pass
+    def __init__(self, nombre):
+        self.nombre = nombre
+        self.calidad = 0
+
+
 ### FIN PARTE 1.1 ###
 
+
 ### INICIO PARTE 1.2 ###
-class Bebestible:
-    pass
+class Bebestible(Plato):
+
+    def __init__(self, nombre):
+        super().__init__(nombre)
+        self.tamanio = configurar_tamanio()
+        self.dificultad = dificultad
+        self.calidad = randint(3, 9)
+
+    def configurar_tamanio(self):
+        opcionesTamanio = ["Pequeño", "Mediano", "Grande"]
+        return choice(opcionesTamanio)
+
+
 ### FIN PARTE 1.2 ###
+
 
 ### INICIO PARTE 1.3 ###
 class Comestible:
     pass
+
+
 ### FIN PARTE 1.3 ###
 
 
@@ -25,9 +45,15 @@ if __name__ == "__main__":
     try:
         un_bebestible = Bebestible("Coca-Cola")
         un_comestible = Comestible("Sopa")
-        print(f"Esto es una {un_bebestible.nombre} de tamaño {un_bebestible.tamano} y calidad {un_bebestible.calidad}.")
-        print(f"Esto es una {un_comestible.nombre} de dificultad {un_comestible.dificultad} y calidad {un_comestible.calidad}.")
+        print(
+            f"Esto es una {un_bebestible.nombre} de tamaño {un_bebestible.tamano} y calidad {un_bebestible.calidad}."
+        )
+        print(
+            f"Esto es una {un_comestible.nombre} de dificultad {un_comestible.dificultad} y calidad {un_comestible.calidad}."
+        )
     except TypeError:
-        print("Hay una cantidad incorrecta de argumentos en algún inicializador y/o todavía no defines una clase")
+        print(
+            "Hay una cantidad incorrecta de argumentos en algún inicializador y/o todavía no defines una clase"
+        )
     except AttributeError:
         print("Algún atributo esta mal definido y/o todavia no defines una clase")
