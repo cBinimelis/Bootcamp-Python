@@ -19,21 +19,28 @@ class Bebestible(Plato):
 
     def __init__(self, nombre):
         super().__init__(nombre)
-        self.tamanio = configurar_tamanio()
-        self.dificultad = dificultad
-        self.calidad = randint(3, 9)
+        self.tamano = choice(["Pequeño", "Mediano", "Grande"])
+        self.dificultad = self.definir_dificultad()
+        self.calidad = randint(3, 8)
 
-    def configurar_tamanio(self):
-        opcionesTamanio = ["Pequeño", "Mediano", "Grande"]
-        return choice(opcionesTamanio)
+    def definir_dificultad(self):
+        if self.tamano == "Pequeño":
+            return 3
+        elif self.tamano == "Mediano":
+            return 6
+        else:
+            return 9
 
 
 ### FIN PARTE 1.2 ###
 
 
 ### INICIO PARTE 1.3 ###
-class Comestible:
-    pass
+class Comestible(Plato):
+    def __init__(self, nombre):
+        super().__init__(nombre)
+        self.dificultad = randint(1, 10)
+        self.calidad = randint(5, 10)
 
 
 ### FIN PARTE 1.3 ###
@@ -51,6 +58,7 @@ if __name__ == "__main__":
         print(
             f"Esto es una {un_comestible.nombre} de dificultad {un_comestible.dificultad} y calidad {un_comestible.calidad}."
         )
+
     except TypeError:
         print(
             "Hay una cantidad incorrecta de argumentos en algún inicializador y/o todavía no defines una clase"
