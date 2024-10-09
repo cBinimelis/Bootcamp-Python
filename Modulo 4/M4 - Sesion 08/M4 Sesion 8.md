@@ -1,4 +1,4 @@
-# Modulo IV - Sesión VII
+# Modulo IV - Sesión VIII
 
 ## Agenda
 
