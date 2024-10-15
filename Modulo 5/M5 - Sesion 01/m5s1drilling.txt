@@ -1,0 +1,8 @@
+create database drilling;
+create user director;
+create user teacher;
+create user student;
+
+\l 
+
+\c drilling

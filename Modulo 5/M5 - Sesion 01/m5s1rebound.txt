@@ -1,0 +1,6 @@
+CREATE DATABASE rebound
+CREATE USER ADMIN
+
+\l 
+
+\c rebound
