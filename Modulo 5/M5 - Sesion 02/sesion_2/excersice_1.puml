@@ -1,0 +1,28 @@
+@startuml 
+title "EJERCICIO 01"
+
+entity "CLIENTE" {
+    Rut
+    --
+    Nombre
+    NombrePais
+}
+
+entity "PRODUCTO" {
+    IdProducto
+    --
+    Nombre
+    Stock
+    Precio
+}
+
+entity "VENTA" {
+    IdVenta
+    --
+    Cantidad
+    Fecha
+}
+
+CLIENTE }o--|| VENTA
+VENTA ||--o{ PRODUCTO
+@enduml

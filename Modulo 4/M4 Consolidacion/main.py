@@ -1,9 +1,6 @@
 from vehiculos import Vehiculo, Automovil, Particular, Carga, Bicicleta, Motocicleta
 import csv
 
-print("##### BIENVENIDO AL SISTEMA DE CONTROL DE VEHÍCULOS #####")
-print("")
-
 
 def parte_1():
     print("##---PARTE 1---##")
@@ -28,6 +25,8 @@ def parte_1():
     for auto in automoviles:
         print(f"Datos del automóvil {count}: {auto}.")
         count += 1
+
+    print("\n--------------------------------------------------\n")
 
 
 def parte_2():
@@ -70,12 +69,25 @@ def parte_2():
         isinstance(motocicleta, Motocicleta),
     )
 
+    print("\n--------------------------------------------------\n")
+
 
 def parte_3():
     print("##---PARTE 3---##")
 
     print("Ingreso y lectura de información en un archivo: \n")
+    print("Guardando datos...")
+
     guardar_datos_csv()
+
+    print("¡Datos guardados existosamente!\n")
+    print("\nLeyendo datos: ")
+
+    leer_datos_csv()
+
+    print("¡Datos leídos exitosamente!")
+
+    print("\n--------------------------------------------------\n")
 
 
 particular = Particular("Ford", "Fiesta", "4", "180", "500", "5")
@@ -88,11 +100,113 @@ vehiculos = [particular, carga, bicicleta, motocicleta]
 
 def guardar_datos_csv():
     try:
-        archivo = open("vehiculo.csv", "w")
-        archivo_csv = csv.writer(archivo)
-        for vehiculo in vehiculos:
-            archivo_csv.writerow((vehiculo.__class__, vehiculo.__dict__))
-        archivo.close()
+        with open("vehiculo.csv", "w", newline="") as archivo:
+            escritor = csv.writer(archivo)
+            escritor.writerow(
+                [
+                    "tipo",
+                    "marca",
+                    "modelo",
+                    "nro_ruedas",
+                    "velocidad",
+                    "cilindrada",
+                    "nro_puestos",
+                    "peso_carga",
+                    "tipo_bicicleta",
+                    "motor",
+                    "cuadro",
+                    "nro_radios",
+                ]
+            )
+            for vehiculo in vehiculos:
+                if isinstance(vehiculo, Motocicleta):
+                    escritor.writerow(
+                        [
+                            vehiculo.tipo(),
+                            vehiculo.marca,
+                            vehiculo.modelo,
+                            vehiculo.nro_ruedas,
+                            "",
+                            "",
+                            "",
+                            "",
+                            vehiculo.tipo_bicicleta,
+                            vehiculo.motor,
+                            vehiculo.cuadro,
+                            vehiculo.nro_radios,
+                        ]
+                    )
+                elif isinstance(vehiculo, Bicicleta):
+                    escritor.writerow(
+                        [
+                            vehiculo.tipo(),
+                            vehiculo.marca,
+                            vehiculo.modelo,
+                            vehiculo.nro_ruedas,
+                            "",
+                            "",
+                            "",
+                            "",
+                            vehiculo.tipo_bicicleta,
+                            "",
+                            "",
+                            "",
+                        ]
+                    )
+
+                elif isinstance(vehiculo, Carga):
+                    escritor.writerow(
+                        [
+                            vehiculo.tipo(),
+                            vehiculo.marca,
+                            vehiculo.modelo,
+                            vehiculo.nro_ruedas,
+                            vehiculo.velocidad,
+                            vehiculo.cilindrada,
+                            "",
+                            vehiculo.peso_carga,
+                            "",
+                            "",
+                            "",
+                            "",
+                        ]
+                    )
+
+                elif isinstance(vehiculo, Particular):
+                    escritor.writerow(
+                        [
+                            vehiculo.tipo(),
+                            vehiculo.marca,
+                            vehiculo.modelo,
+                            vehiculo.nro_ruedas,
+                            vehiculo.velocidad,
+                            vehiculo.cilindrada,
+                            vehiculo.nro_puestos,
+                            "",
+                            "",
+                            "",
+                            "",
+                            "",
+                        ]
+                    )
+
+                elif isinstance(vehiculo, Automovil):
+                    escritor.writerow(
+                        [
+                            vehiculo.tipo(),
+                            vehiculo.marca,
+                            vehiculo.modelo,
+                            vehiculo.nro_ruedas,
+                            vehiculo.velocidad,
+                            vehiculo.cilindrada,
+                            "",
+                            "",
+                            "",
+                            "",
+                            "",
+                            "",
+                        ]
+                    )
     except FileNotFoundError:
         print("No se ha encontrado el archivo vehiculos.csv")
     except Exception:
@@ -100,15 +214,119 @@ def guardar_datos_csv():
 
 
 def leer_datos_csv():
-    lineas_autos = []
-    with open("vehiculo.csv", "r") as datos:
-        for linea in datos.readlines():
-            lineas_autos.append(linea)
-    print(lineas_autos)
-    autos = list(lineas_autos)
-    for auto in autos:
-        info = auto.split(",")
-        print(info[1].replace("{'marca': ", ""))
+    automoviles = []
+    particulares = []
+    cargas = []
+    bicicletas = []
+    motocicletas = []
+    with open("vehiculo.csv", "r") as archivo:
+        try:
+            lector = csv.DictReader(archivo)
+            for fila in lector:
+                tipo = fila["tipo"]
+                if tipo == "Motocicleta":
+                    vehiculo = Motocicleta(
+                        fila["marca"],
+                        fila["modelo"],
+                        fila["nro_ruedas"],
+                        fila["tipo_bicicleta"],
+                        fila["motor"],
+                        fila["cuadro"],
+                        fila["nro_radios"],
+                    )
+                    motocicletas.append(vehiculo)
+                elif tipo == "Bicicleta":
+                    vehiculo = Bicicleta(
+                        fila["marca"],
+                        fila["modelo"],
+                        fila["nro_ruedas"],
+                        fila["tipo_bicicleta"],
+                    )
+                    bicicletas.append(vehiculo)
+                elif tipo == "Carga":
+                    vehiculo = Carga(
+                        fila["marca"],
+                        fila["modelo"],
+                        fila["nro_ruedas"],
+                        fila["velocidad"],
+                        fila["cilindrada"],
+                        fila["peso_carga"],
+                    )
+                    cargas.append(vehiculo)
+                elif tipo == "Particular":
+                    vehiculo = Particular(
+                        fila["marca"],
+                        fila["modelo"],
+                        fila["nro_ruedas"],
+                        fila["velocidad"],
+                        fila["cilindrada"],
+                        fila["nro_puestos"],
+                    )
+                    particulares.append(vehiculo)
+                elif tipo == "Automovil":
+                    vehiculo = Automovil(
+                        fila["marca"],
+                        fila["modelo"],
+                        fila["nro_ruedas"],
+                        fila["velocidad"],
+                        fila["cilindrada"],
+                    )
+                    automoviles.append(vehiculo)
+
+            print("\nListado de Automoviles:")
+            imprimir_listado(automoviles)
+            print("\nListado de Vehiculos Particulares:")
+            imprimir_listado(particulares)
+            print("\nListado de Vehiculos de Carga:")
+            imprimir_listado(cargas)
+            print("\nListado de Bicicletas:")
+            imprimir_listado(bicicletas)
+            print("\nListado de Motocicletas: ")
+            imprimir_listado(motocicletas)
+
+        except FileNotFoundError:
+            print("No se ha encontrado el archivo vehiculo.csv")
+        except Exception as error:
+            print("Ha ocurrido un error inesperado:", error)
 
 
-leer_datos_csv()
+def imprimir_listado(listado):
+    for elemento in listado:
+        if elemento != "None":
+            print(elemento)
+
+
+def iniciar_menu(funcionando):
+
+    print("##### BIENVENIDO AL SISTEMA DE CONTROL DE VEHÍCULOS #####")
+    print("")
+
+    while funcionando:
+        print("##   Selecciona una opcion  ##")
+        print("I   .- Parte 1 ")
+        print("II  .- Parte 2")
+        print("III .- Parte 3")
+        print("IV  .- Salir")
+        try:
+            seleccion = int(input("¿Cuál es tu elección?: "))
+
+            match seleccion:
+                case 1:
+                    parte_1()
+                case 2:
+                    parte_2()
+                case 3:
+                    parte_3()
+                case 4:
+                    print("##### NOS VEMOS PRONTO #####")
+                    funcionando = False
+                case _:
+                    print("Opción no válida")
+
+        except ValueError:
+            print("Has ingresado un valor no admitido.\n")
+        except Exception as error:
+            print("Ha ocurrido un error no previsto: ", error)
+
+
+iniciar_menu(True)
