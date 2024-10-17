@@ -1,0 +1,47 @@
+' Una empresa de transportes quiere gestionar envíos de pedido a clientes. Podemos plantearnos 
+' un diseño inicial de una tabla, la cual contendrá toda la información, código del envío, camión de 
+' transporte, datos del cliente y cada artículo del envío, incluyendo sus características. Un envío 
+' puede despachar varios pedidos, y cada pedido puede incluir varios artículos
+
+@startuml 
+title "EJERCICIO 02"
+
+entity "Envio" {
+    CodEnvio
+    --
+    Cliente
+    DireccionCliente
+}
+
+entity "Pedido" {
+    IdPedido
+    --
+    TotalPedido
+}
+
+entity "DetallePedido" {
+    IdPedido
+    IdArticulo
+    --
+    Cantidad
+}
+
+entity "Articulo"{
+    IdArticulo
+    --
+    Articulo
+    Stock
+    Precio
+}
+entity "Cliente"{
+    Rut
+    --
+    Cliente
+    DireccionCliente
+}
+
+Envio ||--o{ Pedido
+Pedido ||--o{DetallePedido
+DetallePedido}o--||Articulo
+Envio }o--|| Cliente
+@enduml

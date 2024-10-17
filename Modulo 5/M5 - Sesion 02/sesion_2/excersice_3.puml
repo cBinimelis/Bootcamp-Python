@@ -1,0 +1,151 @@
+' Una empresa de cecinas de cerdo desea poder mantener un registro de la producción de sus 
+' cecinas y materias primas consumidas. Necesitan tener control de toda su línea de producción, 
+' compra de materias primas e insumos a proveedores, planta productiva, y máquinas donde se 
+' produce cada partida y su clasificación en lotes. En su producción de cecinas, se requiere 
+' conocer la merma producida por kilo de cerdo según el tipo de éstas. Las partidas son 
+' almacenadas en bodegas, y es necesario ver cuáles deben ser despachadas primero desde la 
+' bodega, según su fecha de fabricación. Se debe tener registrado, además, a quien le fue vendido 
+' cada lote. 
+
+@startuml nombre
+title "EJERCICIO 03"
+
+
+entity "Empresa"{
+    Id: char
+    --
+    Rut: varchar(13) PK NN
+    Nombre: varchar()
+}
+entity "PlantaProduccion" {
+    Id: numeric
+    --
+    Nombre: varchar(50)
+}
+
+entity "Maquinaria" {
+    Id: char
+    --
+    Nombre: varchar()
+}
+
+entity "Produccion" {
+    Id: numeric
+    --
+    FechaInicio: date
+    FechaTermino: date
+}
+
+entity "DetalleProduccion"{
+    Id: numeric
+    --
+    CantidadEsperada: numeric
+    CantidadObtenida: numeric
+    FechaInicio: date
+    FechaTermino: date
+}
+
+entity "Bodega"{
+    Id: numeric
+    --
+    Nombre: varchar(50)
+}
+
+entity "Receta"{
+    Id: numeric
+    --
+    Nombre: varchar(50)
+}
+
+entity "DetalleReceta"{
+    Id: numeric
+    --
+    IdReceta: numeric
+    IdInventarioProduccion: numeric
+}
+
+entity "InventarioProduccion"{
+    Id: numeric
+    --
+    Nombre: varchar(50)
+    Stock: int
+}
+
+entity "DetalleCompra"{
+    Id: numeric
+    --
+    Cantidad: int
+    Descripcion: varchar()
+    Unitario: varchar()
+}
+
+entity "Compra"{
+    NumeroFactura: numeric
+    --
+    Fecha: date
+    Total: numeric
+}
+
+entity "Proveedor"{
+    Rut: varchar(13) PK NN
+    --
+    Nombre: varchar()
+}
+
+
+entity "Cliente"{
+    Rut: varchar(13) PK NN
+    --
+    Nombre: varchar()
+    Giro: varchar()
+    Direccion: varchar() NN
+    Ciudad: varchar()
+    Telefono: varchar()
+    }
+
+entity "Venta"{
+    NumeroFactura: numeric
+    --
+    FechaVenta: date
+    Total: numeric
+}
+
+entity "DetalleVenta"{
+    Id: numeric
+    --
+    Cantidad: int
+    Descripcion: varchar()
+    Unitario: varchar()
+}
+
+entity "Cecina"{
+    Id: numeric
+    --
+    Nombre: varchar(50)
+    Stock: int
+    Precio: numeric
+}
+
+entity "TipoCecina"{
+    Id: numeric
+    --
+    Nombre: varchar(50)
+}
+
+Cliente ||--o{ Venta
+Venta ||-o{ DetalleVenta
+DetalleVenta }o--|| Cecina
+Cecina }o--|| TipoCecina
+
+Maquinaria ||-o{ PlantaProduccion
+PlantaProduccion ||--o{ Produccion
+Produccion ||--o{ DetalleProduccion
+DetalleProduccion }o-|| Bodega
+DetalleProduccion }o--|| Receta
+Receta ||--o{ DetalleReceta
+DetalleReceta }o--|| InventarioProduccion
+InventarioProduccion ||--o{ DetalleCompra
+DetalleCompra }o--|| Compra
+Compra }o--|| Proveedor
+
+@enduml
