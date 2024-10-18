@@ -1,0 +1,35 @@
+@startuml Rebound
+title "Rebound Excersice"
+
+entity "Orden"{
+    IdOrden PK
+    --
+    Fecha
+    TotalOrden
+}
+
+entity "DetalleOrden"{
+    IdOrden FK
+    IdCliente FK
+    Codigo_Articulo FK
+    --
+    Cantidad
+}
+
+entity "Cliente"{
+    IdCliente PK
+    --
+    Cliente
+    Ciudad
+}
+
+entity "Articulo"{
+    Codigo PK
+    --
+    Articulo
+    Precio
+}
+
+Orden ||-|| DetalleOrden
+DetalleOrden }o--|| Cliente
+DetalleOrden }o-|| Articulo
