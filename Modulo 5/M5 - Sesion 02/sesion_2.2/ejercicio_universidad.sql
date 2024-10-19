@@ -1,4 +1,5 @@
-CREATE TABLE estudiante(
+CREATE TABLE estudiante
+(
 	idEstudiante SERIAL PRIMARY KEY NOT NULL,
 	niu int,
 	nombre VARCHAR(30),
@@ -8,18 +9,21 @@ CREATE TABLE estudiante(
 	genero VARCHAR(15)
 );
 
-CREATE TABLE FACULTAD (
+CREATE TABLE facultad
+(
 	idFacultad SERIAL PRIMARY KEY NOT NULL,
 	nombre VARCHAR(60)
 );
 
-CREATE TABLE semestre_academico (
+CREATE TABLE semestre_academico
+(
 	idSemestreAcademico SERIAL PRIMARY KEY NOT NULL,
 	fechaInicio DATE,
 	fechaTermino DATE
 );
 
-CREATE TABLE programa_academico (
+CREATE TABLE programa_academico
+(
 	idProgramaAcademico SERIAL PRIMARY KEY NOT NULL,
 	nombre VARCHAR(50),
 	creditosTotales INT,
@@ -28,14 +32,15 @@ CREATE TABLE programa_academico (
 	descripcion TEXT
 );
 
-CREATE TABLE direccion (
+CREATE TABLE direccion
+(
 	idDireccion SERIAL PRIMARY KEY NOT NULL,
 	idEstudiante INT NOT NULL,
 	calle VARCHAR(50),
 	numero VARCHAR(6),
 	comuna VARCHAR(30),
 	region VARCHAR(30),
-	FOREIGN KEY(idEstudiante) REFERENCES estudiante(idEstudiante) 
+	FOREIGN KEY(idEstudiante) REFERENCES estudiante(idEstudiante)
 );
 
 CREATE TABLE docente
@@ -49,7 +54,8 @@ CREATE TABLE docente
 	fechaInicioJefatura DATE
 );
 
-CREATE TABLE departamento (
+CREATE TABLE departamento
+(
 	idDepartamento SERIAL PRIMARY KEY NOT NULL,
 	idDocente INT NOT NULL,
 	idFacultad INT NOT NULL,
@@ -66,7 +72,8 @@ ALTER TABLE docente
 ADD CONSTRAINT docente_idDepartamento
 FOREIGN KEY (idDepartamento) REFERENCES departamento(idDepartamento);
 
-CREATE TABLE curso (
+CREATE TABLE curso
+(
 	idCurso SERIAL PRIMARY KEY NOT NULL,
 	idProgramaAcademico INT NOT NULL,
 	idDocente INT NOT NULL,
@@ -75,7 +82,8 @@ CREATE TABLE curso (
 	FOREIGN KEY (idDocente) REFERENCES docente (idDocente)
 );
 
-CREATE TABLE asignatura (
+CREATE TABLE asignatura
+(
 	idAsignatura SERIAL PRIMARY KEY NOT NULL,
 	idDepartamento INT NOT NULL,
 	idCurso INT NOT NULL,
@@ -90,7 +98,8 @@ CREATE TABLE asignatura (
 	FOREIGN KEY (idRequisitoPrevio) REFERENCES asignatura(idAsignatura)
 );
 
-CREATE TABLE proyecto_final_carrera (
+CREATE TABLE proyecto_final_carrera
+(
 	idProyectoFinalCarrera SERIAL PRIMARY KEY NOT NULL,
 	idDocente INT NOT NULL,
 	idEstudiante INT NOT NULL,
@@ -100,14 +109,16 @@ CREATE TABLE proyecto_final_carrera (
 	FOREIGN KEY(idEstudiante) REFERENCES estudiante(idEstudiante)
 );
 
-CREATE TABLE estudiante_programa (
+CREATE TABLE estudiante_programa
+(
 	idEstudiante INT NOT NULL,
 	idProgramaAcademico INT NOT NULL,
 	FOREIGN KEY(idEstudiante) REFERENCES estudiante(idEstudiante),
 	FOREIGN KEY (idProgramaAcademico) REFERENCES programa_academico (idProgramaAcademico)
 );
 
-CREATE TABLE materias_cursar (
+CREATE TABLE materias_cursar
+(
 	idMateriasCursar SERIAL PRIMARY KEY NOT NULL,
 	idEstudiante INT NOT NULL,
 	idSemestreAcademico INT NOT NULL,
@@ -117,7 +128,8 @@ CREATE TABLE materias_cursar (
 	FOREIGN KEY (idCurso) REFERENCES curso(idCurso)
 );
 
-CREATE TABLE registro_notas (
+CREATE TABLE registro_notas
+(
 	idRegistroNotas SERIAL PRIMARY KEY NOT NULL,
 	idMateriasCursar INT NOT NULL,
 	calificacion NUMERIC,
