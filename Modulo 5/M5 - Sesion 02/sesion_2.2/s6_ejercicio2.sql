@@ -136,3 +136,7 @@ CREATE TABLE registro_notas
 	idAsignatura INT NOT NULL,
 	FOREIGN KEY (idMateriasCursar) REFERENCES materias_cursar (idMateriasCursar)
 );
+
+ALTER TABLE facultad
+ADD CONSTRAINT not_null_empty
+CHECK (nombre IS NOT NULL AND CHAR_LENGTH(TRIM(nombre)) > 0)
