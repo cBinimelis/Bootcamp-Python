@@ -65,8 +65,8 @@ CREATE TABLE departamento
 	FOREIGN KEY (idFacultad) REFERENCES facultad(idFacultad)
 );
 
-ALTER TABLE docente
-ADD COLUMN idDepartamento INT NOT NULL;
+--ALTER TABLE docente
+--ADD COLUMN idDepartamento INT NOT NULL;
 
 ALTER TABLE docente
 ADD CONSTRAINT docente_idDepartamento
