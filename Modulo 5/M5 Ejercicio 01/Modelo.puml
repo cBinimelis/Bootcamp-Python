@@ -1,0 +1,78 @@
+@startuml Invernadero
+
+entity Empresa{
+    idEmpresa
+    --
+    Nombre
+    Direccion
+    Correo
+    Web
+}
+
+entity Invernadero {
+    idInvernadero
+    --
+    Nombre
+    Direccion
+    Comuna
+    Coordenadas
+}
+
+entity Planta {
+    IdPlanta
+    --
+    FechaPlantacion
+    TemporadaCultivo
+    Fecha
+    idEspecie
+}
+
+entity Especie{
+    idEspecie
+    --
+    Nombre
+}
+
+entity Sensor {
+    idSensor
+    --
+    Temperatura
+    Humedad
+    Luminosidad
+}
+
+entity Sector {
+    idSector
+    --
+    Nombre
+}
+
+entity Actuador {
+    idActuador
+    --
+    TemperaturaObjetivo
+    HumedadObjetivo
+}
+
+entity Tratamiento {
+    IdTratamiento
+    --
+    CantidadAplicada
+    FechaTratamiento
+    idTipoTratamiento
+}
+
+entity TipoTratamiento{
+    idTipoTratamiento
+    --
+    Nombre
+    UnidadMedida
+}
+
+entity Trabajador {
+    idTrabajador
+    --
+    Turno
+}
+
+@enduml
