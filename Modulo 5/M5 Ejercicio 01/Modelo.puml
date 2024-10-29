@@ -15,7 +15,8 @@ entity Invernadero {
     Nombre
     Direccion
     Comuna
-    Coordenadas
+    Longitud
+    Latitud
 }
 
 entity Planta {
@@ -34,8 +35,15 @@ entity Especie{
 }
 
 entity Sensor {
-    idSensor
+    sensor_id
     --
+    planta_id
+    sector_id
+}
+
+entity MedicionSensor {
+    sensor_id
+    tiempo_medicion
     Temperatura
     Humedad
     Luminosidad
@@ -74,5 +82,15 @@ entity Trabajador {
     --
     Turno
 }
+
+Planta -- Sensor
+Planta - Tratamiento
+Tratamiento - TipoTratamiento
+Especie - Planta
+Sensor - MedicionSensor
+Sensor -- Sector
+Sector-Invernadero
+Actuador - Sector
+Invernadero - Trabajador
 
 @enduml
