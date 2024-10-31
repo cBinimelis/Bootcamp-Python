@@ -35,3 +35,9 @@ ORDER BY (total) DESC
 SELECT COUNT(DISTINCT nombre_actor) AS total_actores
 FROM reparto
 
+-- PELICULAS ENTRE 1990 Y 1999
+SELECT * 
+FROM peliculas 
+WHERE estreno BETWEEN 1990 AND 1999
+ORDER BY nombre
+
