@@ -1,0 +1,3 @@
+Instalar Django:    pip install django
+Crear Proyecto:     django-admin startproject nombre_proyecto .
+Iniciar Servidor:   python manage.py runserver
