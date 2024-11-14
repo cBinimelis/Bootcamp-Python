@@ -1,0 +1,36 @@
+{%extends 'base.html'%} {%block title%} Contacto {%endblock%} {%block content%}
+<h1>Contact</h1>
+<p>Correo de contacto: {{mail}}</p>
+<p>Teléfono de contacto: {{phone}}</p>
+<p>La fecha de hoy es: <b>{{date|date:"d-m-Y"}}</b></p>
+
+<form>{{form.as_p}}</form>
+<form method="post" action="">
+  {% csrf_token %}
+  <table class="table">
+    {{form.as_table}}
+  </table>
+  <button type="submit">Enviar Contacto</button>
+</form>
+<div class="row m-3">
+  <div class="col">{{form.first_name}}</div>
+  <div class="col">{{form.last_name}}</div>
+</div>
+<div class="row m-3">
+  <form method="post">
+    <div class="mb-3">
+      <label for="{{form.email.id_for_label}}" class="form-label"
+        >Email Address</label
+      >
+      {{form.email}}
+    </div>
+    <div class="mb-3">
+      <label for="{{form.comment.id_for_label}}" class="form-label"
+        >Comentario</label
+      >
+      {{form.comment}}
+    </div>
+    <button type="submit" class="btn btn-primary">Enviar Comentarios</button>
+  </form>
+</div>
+{%endblock%}

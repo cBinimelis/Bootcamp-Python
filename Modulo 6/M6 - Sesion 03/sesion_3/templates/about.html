@@ -1,0 +1,7 @@
+{% extends 'base.html' %} {% block content %}
+
+<h1>Acerca de</h1>
+<h2>{{enterprise_name|upper}}</h2>
+<p>{{description}}</p>
+<p>{%now "d/m/Y"%}</p>
+{% endblock %}
