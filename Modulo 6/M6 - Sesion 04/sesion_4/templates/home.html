@@ -1,3 +1,9 @@
 {% extends 'base.html' %} {% block content %}
 <h1>Welcome</h1>
-{% endblock %}
+
+{% if request.user.is_authenticated %}
+<form action="{% url 'logout' %}" method="post">
+  {%csrf_token%}
+  <button type="submit">Cerrar Sesion</button>
+</form>
+{%endif%} {% endblock %}

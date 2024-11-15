@@ -1,6 +1,4 @@
 from django.shortcuts import render
-import datetime
-from .forms import ContactForm
 
 
 def home(request):
@@ -8,8 +6,6 @@ def home(request):
 
 
 def contact(request):
-
-    print(request.method)
     return render(request, "contact.html")
 
 
