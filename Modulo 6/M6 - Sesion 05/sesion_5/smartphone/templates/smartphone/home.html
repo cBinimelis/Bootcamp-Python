@@ -1,0 +1,10 @@
+{%extends 'general/base.html'%} {%block title%} Smartphone - Home {%endblock%}
+{%block content%}
+<h1>Smartphone</h1>
+
+{% if request.user.is_authenticated %}
+<form action="{% url 'logout' %}" method="post">
+  {%csrf_token%}
+  <button type="submit">Cerrar Sesion</button>
+</form>
+{%endif%} {%endblock%}
