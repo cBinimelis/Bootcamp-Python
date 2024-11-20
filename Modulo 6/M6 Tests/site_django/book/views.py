@@ -1,5 +1,4 @@
-from django.http import HttpResponse
-
+from django.shortcuts import render
 
 def index(request):
-    return HttpResponse("Bienvenidos a mi sitio de libros.")
+    return render(request,"book/index.html")
