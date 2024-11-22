@@ -233,10 +233,12 @@
    }
    ```
 
+   Luego debes instalar la librería **psycopg2** con el comando `pip install psycopg2` en tu consola de comandos, esta librería te permitirá acceder a tu base de datos y realizar las migraciones. Para finalizar, en la misma consola ejecutamos el comando `py manage.py createsuperuser` para crear un usuario con privilegios de administrador.
+
 9. Para ejecutar tus migraciones, incluyendo las iniciales, debes utilizar los comandos:
    - `python manage.py makemigrations`: Esto buscará todos los modelos agregados mo modificados y creará los archivos de migración.
    - `python manage.py migrate`: Esto ejecutará las migraciones del comando anterior y llevará los cambios a la base de datos.
-10. PAra agregar autenticación a nuestro proyecto debemos ir a `mysite/settings.py` y agregar lo siguiente:
+10. Para agregar autenticación a nuestro proyecto debemos ir a `mysite/settings.py` y agregar lo siguiente:
 
     ```python
     LOGIN_REDIRECT_URL = "dashboard:home"
@@ -262,7 +264,7 @@
     ]
     ```
 
-12. Para proteger rutas y que estas solo puedanser accedidas cuando una persona está logueada, se debe ocupar el decorador `@login_required`.
+12. Para proteger rutas y que estas solo puedan ser accedidas cuando una persona está logueada, se debe ocupar el decorador `@login_required`.
 
     ```python
     from django.shortcuts import render
