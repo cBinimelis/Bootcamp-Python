@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <title>{% block title %} My Page {% endblock %}</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <!-- Sidebar  -->
+      <nav id="sidebar">
+        <div class="sidebar-header">
+          <h3>Thread Fox - Admin</h3>
+        </div>
+
+        <ul class="list-unstyled components">
+          <li>
+            <a href="{% url 'dashboard:home' %}">Home</a>
+          </li>
+          <li>
+            <a
+              href="#prodMenu"
+              data-bs-toggle="collapse"
+              aria-expanded="false"
+              class="dropdown-toggle"
+              aria-controls="prodMenu"
+              >Products</a
+            >
+            <ul class="collapse list-unstyled" id="prodMenu">
+              <li>
+                <a href="{% url 'product:list' %}">List</a>
+              </li>
+              <li>
+                <a href="{% url 'product:add' %}">Add</a>
+              </li>
+              <li>
+                <a href="{% url 'product:edit' %}">Edit</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a
+              href="#orderMenu"
+              data-bs-toggle="collapse"
+              aria-expanded="false"
+              class="dropdown-toggle"
+              aria-controls="orderMenu"
+              >Orders</a
+            >
+            <ul class="collapse list-unstyled" id="orderMenu">
+              <li>
+                <a href="{% url 'orders:list' %}">List</a>
+              </li>
+              <li>
+                <a href="{% url 'orders:detail' %}">Detail</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+
+        <ul class="list-unstyled CTAs">
+          <li>
+            {% if request.user.is_authenticated %}
+            <form action="{% url 'logout' %}" method="post">
+              {%csrf_token%}
+              <button class="btn btn-danger w-100" type="submit">
+                Cerrar Sesion
+              </button>
+            </form>
+            {%endif%}
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Page Content  -->
+      <div id="content">
+        {% block content %}
+        <!-- Contenido-->
+        {% endblock %}
+      </div>
+    </div>
+
+    <script src="{% static 'js/bootstrap.js' %}"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <script src="{% static 'js/script.js' %}"></script>
+  </body>
+</html>

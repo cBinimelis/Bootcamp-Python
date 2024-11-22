@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+
+    <title>{% block title %} My Page{% endblock %}</title>
+  </head>
+  <body>
+    <!-- Responsive navbar-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container">
+        <a class="navbar-brand" href="{%  url 'home' %}">TF</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="{%  url 'home' %}"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{%  url 'about' %}">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{%  url 'contact' %}">Contact</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{%  url 'testimonials' %}"
+                >Testimonials</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{%  url 'login' %}">Login</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- Header - set the background image for the header in the line below-->
+    <header
+      class="py-5 bg-image-full"
+      style="background-image: url('/static/img/main_bg.jpg')"
+    >
+      <div class="text-center my-5">
+        <img
+          class="img-fluid rounded-circle mb-4"
+          src="../static/img/profile.jpg"
+          alt="..."
+        />
+        <h1 class="text-white fs-3 fw-bolder">Thread Fox</h1>
+        <p class="text-white-50 mb-0">Embroidery & Hobbies</p>
+      </div>
+    </header>
+    <!-- Content section-->
+    <section class="py-5">
+      <div class="container my-5">
+        <div class="row justify-content-center">
+          <div class="col-lg-6">
+            {% block content %}
+            <!-- Contenido-->
+            {% endblock %}
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Image element - set the background image for the header in the line below-->
+    <div
+      class="py-5 bg-image-full"
+      style="background-image: url('/static/img/center_bg.jpg')"
+    >
+      <div style="height: 20rem"></div>
+    </div>
+    <!-- Footer-->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white">Copyright &copy; 2024</p>
+      </div>
+    </footer>
+    <script src="{% static 'js/bootstrap.js' %}"></script>
+  </body>
+</html>
