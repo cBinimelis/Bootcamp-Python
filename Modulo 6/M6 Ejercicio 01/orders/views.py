@@ -5,5 +5,6 @@ from django.contrib.auth.decorators import login_required
 def list(request):
     return render(request,'orders/list.html')
 
+@login_required
 def detail(request):
     return render(request,'orders/detail.html')

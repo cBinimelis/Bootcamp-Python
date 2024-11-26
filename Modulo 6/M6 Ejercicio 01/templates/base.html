@@ -56,12 +56,12 @@
     <!-- Header - set the background image for the header in the line below-->
     <header
       class="py-5 bg-image-full"
-      style="background-image: url('/static/img/main_bg.jpg')"
+      style="background-image: url('{% static 'img/main_bg.jpg' %}')"
     >
       <div class="text-center my-5">
         <img
           class="img-fluid rounded-circle mb-4"
-          src="../static/img/profile.jpg"
+          src="{% static 'img/profile.jpg' %}"
           alt="..."
         />
         <h1 class="text-white fs-3 fw-bolder">Thread Fox</h1>
@@ -83,7 +83,7 @@
     <!-- Image element - set the background image for the header in the line below-->
     <div
       class="py-5 bg-image-full"
-      style="background-image: url('/static/img/center_bg.jpg')"
+      style="background-image: url('{% static 'img/center_bg.jpg' %}')"
     >
       <div style="height: 20rem"></div>
     </div>
