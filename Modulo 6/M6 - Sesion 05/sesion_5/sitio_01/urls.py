@@ -25,6 +25,7 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("contact/", views.contact, name="contact"),
     path("about/", views.about, name="about"),
+    path("palindromo/<palabra>", views.palindromo, name="palindromo"),
     path(
         "login/", auth_views.LoginView.as_view(template_name="login.html"), name="login"
     ),
