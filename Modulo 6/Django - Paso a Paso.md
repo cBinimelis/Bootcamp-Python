@@ -45,15 +45,30 @@
       },
       ]
       ```
-
-    - **B:** Crear en el mismo nivel de la app `mysite` una carpeta llamada `templates`
+      Crear en el mismo nivel de la app `mysite` una carpeta llamada `templates`
 
       ```
       📂 mysite
       ┣ 📂 mysite
       ┣ 📂 templates
       ┗ 📂 venv
-      ┗ 📜 pyvenv.cfg
+      ```
+
+    - **B:** Configurar los archivos estáticos en `settings.py`
+
+      ```python
+      # Static files (CSS, JavaScript, Images)
+      # https://docs.djangoproject.com/en/5.1/howto/static-files/
+      STATIC_URL = "static/"
+      STATICFILES_DIRS = [BASE_DIR / "static"] #Se agrega esta fila para crear una ruta absoluta
+      ```
+      Además, en el mismo nivel de la app `mysite` se debe crear una carpeta con el nombre `static`
+      ```
+      📂 mysite
+      ┣ 📂 mysite
+      ┣ 📂 static
+      ┣ 📂 templates
+      ┗ 📂 venv
       ```
 
     - **C:** Crear dentro de `templates` un archivo llamado `base.html`, acá vas a declarar todo el html principal, el cual servirá como template padre para aplicar la herencia. Recuerda que lo que va acá se cargará en todos los templates que hereden de el. (Acá es donde debes colocar los archivos de bootstrap, tus archivos de estilo, archivos javascript y todos aquellos archivos que correspondan a tu landing page.)
@@ -77,6 +92,14 @@
           <script src="{% static 'js/bootstrap.js' %}"></script>
         </body>
       </html>
+      ```
+      ```
+      📂 mysite
+      ┣ 📂 mysite
+      ┣ 📂 static
+      ┣ 📂 templates
+      ┃ ┗ 📜 base.html
+      ┗ 📂 venv
       ```
 
     - **D:** Crear todos los templates necesarios para las rutas que vas a declarar:
@@ -137,9 +160,9 @@
     ┃ ┣ 📜tests.py
     ┃ ┗ 📜views.py
     ┣ 📂mysite
+    ┣ 📂static
     ┣ 📂templates
     ┗ 📂venv
-      ┗ 📜 pyvenv.cfg
     ```
 
 - `admin.py`: Permite declarar los modelos y sus configuraciones, para que sean administrados desde el panel de administrador
@@ -177,9 +200,9 @@
      ┃ ┣ 📜tests.py
      ┃ ┗ 📜views.py
      ┣ 📂mysite
+     ┣ 📂static
      ┣ 📂templates
      ┗ 📂venv
-       ┗ 📜 pyvenv.cfg
      ```
 
    - **C:** Crea dentro de la carpeta `templates` que está a nivel de tu proyecto, una carpeta llamada `general` y allí crear tu archivo `base.html`, el cual se usará como template padre para la herencia de tus apps.
@@ -188,6 +211,7 @@
      📦mysite
      ┣ 📂dashboard
      ┣ 📂mysite
+     ┣ 📂static
      ┣ 📂templates
      ┃ ┣ 📂general
      ┃ ┃  ┗ 📜base.html
@@ -196,7 +220,6 @@
      ┃ ┣ 📜contact.html
      ┃ ┗ 📜home.html
      ┗ 📂venv
-       ┗ 📜 pyvenv.cfg
      ```
 
    - **D:** Crear todos los templates necesarios para las rutas que vas a declarar.

@@ -18,8 +18,21 @@ Django mediante: `django.contrib.staticfiles`, gestiona el contenido estático
 
 En `settings.py`, tenemos líneas exclusivamente dedicadas al manejo del contenido estático. existen 4 elementos:
 
+- `static_root`
+- `static_url`
+- `staticfiles_finders`
 - `staticfiles_dirs`: Este elemento permite declarar la ruta, desde la cual se enlazará el contenido estático, lo dejamos de la siguiente manera:
-
-`static_root`
-`static_url`
-`staticfiles_finders`
+  `python
+    STATIC_URL = "static/"
+    STATICFILES_DIRS = [BASE_DIR / "static"]
+    `
+  Dentro del directorio static, debemos tener una carpeta por cada tipo de contenido estático, que deseemos incluir. Tendremos tres subdirectorios en static: css, img y js.
+  `    📂 mysite
+    ┣ 📂 mysite
+    ┣ 📂 static
+    ┃ ┣ 📂 css
+    ┃ ┣ 📂 img
+    ┃ ┗ 📂 js
+    ┣ 📂 templates
+    ┗ 📂 venv
+   `
