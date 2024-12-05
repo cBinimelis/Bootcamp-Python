@@ -45,6 +45,7 @@
       },
       ]
       ```
+
       Crear en el mismo nivel de la app `mysite` una carpeta llamada `templates`
 
       ```
@@ -62,7 +63,9 @@
       STATIC_URL = "static/"
       STATICFILES_DIRS = [BASE_DIR / "static"] #Se agrega esta fila para crear una ruta absoluta
       ```
+
       Además, en el mismo nivel de la app `mysite` se debe crear una carpeta con el nombre `static`
+
       ```
       📂 mysite
       ┣ 📂 mysite
@@ -93,6 +96,7 @@
         </body>
       </html>
       ```
+
       ```
       📂 mysite
       ┣ 📂 mysite
@@ -297,5 +301,13 @@
     def home(request):
         return render(request, "dashboard/home.html")
     ```
+
+13. Acceder al sitio administrativo de Django
+
+- **A:** Antes de acceder, recuerda que debes tener activo un super usuario, con sol permisos suficientes para acceder al sitio administrativo, si no lo has creado aun, ejecuta en la consola de tu proyecto el comando `python manage.py createsuperuser` y sigue las instrucciones.
+
+- **B:** Para poder acceder al sitio administrativo deben estar ejecutadas las migraciones iniciales, si aún no lo hass hecho puedes guiarte del punto 9.
+- **C:** Debes ingresar el usuario y password proporcionados cuando se creó el super-usuario.
+- **D:** Una ve
 
 [^1]: Si es que no estás utilizando PyCharm.

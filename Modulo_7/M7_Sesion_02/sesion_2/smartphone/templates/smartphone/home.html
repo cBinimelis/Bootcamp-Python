@@ -1,0 +1,21 @@
+{%extends 'general/base.html'%} {%block title%} Smartphone - Home {%endblock%}
+{%block content%}
+<h1>Smartphone</h1>
+<a href="{% url 'smartphone:create' %}">Crear Smartphones</a>
+<br />
+<a href="{% url 'smartphone:create_multiple' %}">Crear Varios Smartphones</a>
+<br />
+<a href="{% url 'smartphone:update' %}">Actualizar Smartphone</a>
+<br />
+<a href="{% url 'smartphone:update_multiple' %}"
+  >Actualizar Varios Smartphones</a
+>
+<br />
+
+{% if request.user.is_authenticated %}
+<form action="{% url 'logout' %}" method="post">
+  {%csrf_token%}
+  <button type="submit">Cerrar Sesion</button>
+</form>
+
+{%endif%} {% endblock %}
