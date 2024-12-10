@@ -1,0 +1,31 @@
+title "Sistema de Ventas"
+
+class cliente{
+    RUT: Integer
+    --
+    Nombre: String
+    Telefonos: String
+
+}
+class direccion_cliente{
+    comuna: String
+    ciudad: String
+    calle: String
+    numero: Integer
+}
+class venta{
+    fecha: DateTime
+    monto_final: Double
+    Descuento: Integer
+}
+
+class producto{
+    nombre: String
+    precio: Double
+    stock: Integer
+}
+
+class categoria{
+    nombre:String
+    descripcion:String
+}

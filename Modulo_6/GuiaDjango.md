@@ -302,12 +302,29 @@
         return render(request, "dashboard/home.html")
     ```
 
-13. Acceder al sitio administrativo de Django
+13. Agregando modelos al sitio administrativo:
+
+- **A:** Crea tus modelos y ejecuta las migraciones.
+- **B:** Ve a `my_app/admin.py` y registra tu modelo.
+
+  ```python
+  @admin.register(Smartphone)
+  class SmartphoneAdmin(admin.ModelAdmin):
+    list_display=['model','ram','height','price','status']
+    search_fields=['model']
+  ```
+
+- **C:** An
+- **D:** An
+- **E:** An
+- **F:** An
+
+14. Acceder al sitio administrativo de Django
 
 - **A:** Antes de acceder, recuerda que debes tener activo un super usuario, con sol permisos suficientes para acceder al sitio administrativo, si no lo has creado aun, ejecuta en la consola de tu proyecto el comando `python manage.py createsuperuser` y sigue las instrucciones.
 
-- **B:** Para poder acceder al sitio administrativo deben estar ejecutadas las migraciones iniciales, si aún no lo hass hecho puedes guiarte del punto 9.
+- **B:** Para poder acceder al sitio administrativo deben estar ejecutadas las migraciones iniciales, si aún no lo has hecho puedes guiarte del punto 9.
 - **C:** Debes ingresar el usuario y password proporcionados cuando se creó el super-usuario.
-- **D:** Una ve
+- **D:** Una vez iniciada la sesión encontrarás al menos dos menús, "Groups" y "Users", en el primero, se crean grupos y permisos de acceso para poder manejarlo todo desde tu aplicacion, también podrás configurar los permisos sobre tus propios modelos. En el segundo podrás crear usuarios y asignarles los permisos y/o grupos necesarios para su funcionamiento, incluso darle permisos como administrador.
 
 [^1]: Si es que no estás utilizando PyCharm.
