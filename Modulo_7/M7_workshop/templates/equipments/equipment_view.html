@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Equipment View</h1>
+    <table>
+      <tr>
+        <td>Serial:</td>
+        <td>{{equipment.serial}}</td>
+      </tr>
+      <tr>
+        <td>Brand:</td>
+        <td>{{equipment.brand}}</td>
+      </tr>
+      <tr>
+        <td>Model:</td>
+        <td>{{equipment.model}}</td>
+      </tr>
+    </table>
+    <a href="{% url 'equipment_list' %}">Volver</a>
+    <a href="{% url 'equipment_edit' equipment.id %}">Editar</a>
+    <a href="{% url 'equipment_delete' equipment.id %}">Eliminar</a>
+  </body>
+</html>

@@ -21,7 +21,8 @@
         <tr>
           <td>{{element.id}}</td>
           <td>{{element.name}}</td>
-          <td><a href="{% url 'brand_edit' element.id %}">Editar</a></td>
+          <td><a href="{% url 'brand_edit' element.id %}">Edit</a></td>
+          <td><a href="{% url 'brand_delete' element.id %}">Delete</a></td>
         </tr>
         {% endfor %}
       </tbody>
