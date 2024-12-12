@@ -1,0 +1,22 @@
+{% extends 'general/base.html' %}
+
+<!--CONTENIDO-->
+{%block content%}
+<div class="container">
+  <h1>Brand</h1>
+
+  <div class="row">
+    <form class="row g-3" method="post">
+      {% csrf_token %}
+
+      <div class="col-12 my-3">
+        <label for="id_name" class="form-label">Name</label>
+        {{form.name}}
+      </div>
+      <div class="col-12">
+        <button type="submit" class="btn btn-primary">Save</button>
+      </div>
+    </form>
+  </div>
+  {%endblock%}
+</div>

@@ -1,0 +1,29 @@
+{% extends 'general/base.html' %}
+
+<!--CONTENIDO-->
+{%block content%}
+<h1>Brand</h1>
+<a class="btn btn-primary" href="{% url 'brand_create' %}">Create Brand</a>
+<table class="table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for element in brands %}
+    <tr>
+      <td>
+        <a href="{% url 'brand_view' element.id %}">{{element.id}}</a>
+      </td>
+      <td>{{element.name}}</td>
+      <td><a href="{% url 'brand_edit' element.id %}">Edit</a></td>
+      <td><a href="{% url 'brand_delete' element.id %}">Delete</a></td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+{%endblock%}

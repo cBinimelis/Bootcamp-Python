@@ -1,0 +1,30 @@
+{% extends 'general/base.html' %}
+
+<!--CONTENIDO-->
+{%block content%}
+<h1>Models</h1>
+<a class="btn btn-primary" href="{% url 'model_create' %}">Create Model</a>
+<table class="table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for element in models %}
+    <tr>
+      <td>
+        <a href="{% url 'model_view' element.id %}">{{element.id}}</a>
+      </td>
+      <td>{{element.name}}</td>
+
+      <td><a href="{% url 'model_edit' element.id %}">Edit</a></td>
+      <td><a href="{% url 'model_delete' element.id %}">Delete</a></td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+{%endblock%}

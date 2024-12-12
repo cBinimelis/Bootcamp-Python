@@ -1,28 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    <h1>Equipment View</h1>
-    <table>
-      <tr>
-        <td>Serial:</td>
-        <td>{{equipment.serial}}</td>
-      </tr>
-      <tr>
-        <td>Brand:</td>
-        <td>{{equipment.brand}}</td>
-      </tr>
-      <tr>
-        <td>Model:</td>
-        <td>{{equipment.model}}</td>
-      </tr>
-    </table>
-    <a href="{% url 'equipment_list' %}">Volver</a>
-    <a href="{% url 'equipment_edit' equipment.id %}">Editar</a>
-    <a href="{% url 'equipment_delete' equipment.id %}">Eliminar</a>
-  </body>
-</html>
+{% extends 'general/base.html' %}
+
+<!--CONTENIDO-->
+{%block content%}
+<h1>Equipment View</h1>
+<table class="table col-6">
+  <tr>
+    <td>Serial:</td>
+    <td>{{equipment.serial}}</td>
+  </tr>
+  <tr>
+    <td>Brand:</td>
+    <td>{{equipment.brand}}</td>
+  </tr>
+  <tr>
+    <td>Model:</td>
+    <td>{{equipment.model}}</td>
+  </tr>
+</table>
+<a class="btn btn-info" href="{% url 'equipment_list' %}">Go Back</a>
+<a class="btn btn-primary" href="{% url 'equipment_edit' equipment.id %}"
+  >Edit</a
+>
+<a class="btn btn-danger" href="{% url 'equipment_delete' equipment.id %}"
+  >Delete</a
+>
+
+{%endblock%}

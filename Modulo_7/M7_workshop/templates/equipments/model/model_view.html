@@ -1,0 +1,20 @@
+{% extends 'general/base.html' %}
+
+<!--CONTENIDO-->
+{%block content%}
+<h1>Model View</h1>
+<table class="table col-6">
+  <tr>
+    <td>ID:</td>
+    <td>{{model.id}}</td>
+  </tr>
+  <tr>
+    <td>Name:</td>
+    <td>{{model.name}}</td>
+  </tr>
+</table>
+<a class="btn btn-info" href="{% url 'model_list' %}">Go Back</a>
+<a class="btn btn-primary" href="{% url 'model_edit' model.id %}">Edit</a>
+<a class="btn btn-danger" href="{% url 'model_delete' model.id %}">Delete</a>
+
+{%endblock%}

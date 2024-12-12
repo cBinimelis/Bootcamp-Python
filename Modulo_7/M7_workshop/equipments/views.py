@@ -1,14 +1,15 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import Brand, Model, Equipment
-from .forms import BrandForm, EquipmentForm
+from .forms import BrandForm, EquipmentForm, ModelForm
 
 
 # Create your views here.
+# BRAND---------------------------------------
 def brand_list(request):
     brands = Brand.objects.all()
     context = {"brands": brands}
-    return render(request, "equipments/brand_list.html", context)
+    return render(request, "equipments/brand/brand_list.html", context)
 
 
 def brand_create(request):
@@ -19,7 +20,7 @@ def brand_create(request):
     else:
         form = BrandForm()
     context = {"form": form}
-    return render(request, "equipments/brand_form.html", context)
+    return render(request, "equipments/brand/brand_form.html", context)
 
 
 def brand_edit(request, pk):
@@ -32,7 +33,7 @@ def brand_edit(request, pk):
         form = BrandForm(instance=brand)
 
     context = {"form": form}
-    return render(request, "equipments/brand_form.html", context)
+    return render(request, "equipments/brand/brand_form.html", context)
 
 
 def brand_delete(request, pk):
@@ -42,9 +43,63 @@ def brand_delete(request, pk):
         return redirect("brand_list")
     else:
         context = {"brand": brand}
-        return render(request, "equipments/brand_confirm_delete.html", context)
+        return render(request, "equipments/brand/brand_confirm_delete.html", context)
 
 
+def brand_view(request, pk):
+    brand = Brand.objects.get(id=pk)
+    context = {"brand": brand}
+    return render(request, "equipments/brand/brand_view.html", context)
+
+
+# MODEL---------------------------------------
+def model_list(request):
+    models = Model.objects.all()
+    context = {"models": models}
+    return render(request, "equipments/model/model_list.html", context)
+
+
+def model_create(request):
+    if request.method == "POST":
+        form = ModelForm(request.POST)
+        form.save()
+        return redirect("model_list")
+    else:
+        form = ModelForm()
+    context = {"form": form}
+    return render(request, "equipments/model/model_form.html", context)
+
+
+def model_edit(request, pk):
+    model = Model.objects.get(id=pk)
+    if request.method == "POST":
+        form = ModelForm(request.POST, instance=model)
+        form.save()
+        return redirect("model_list")
+    else:
+        form = ModelForm(instance=model)
+
+    context = {"form": form}
+    return render(request, "equipments/model_form.html", context)
+
+
+def model_delete(request, pk):
+    model = Model.objects.get(id=pk)
+    if request.method == "POST":
+        model.delete()
+        return redirect("model_list")
+    else:
+        context = {"model": model}
+        return render(request, "equipments/model/model_confirm_delete.html", context)
+
+
+def model_view(request, pk):
+    model = Model.objects.get(id=pk)
+    context = {"model": model}
+    return render(request, "equipments/model/model_view.html", context)
+
+
+# EQUIPMENT---------------------------------------
 def equipment_list(request):
     equipments = Equipment.objects.all()
     context = {"equipments": equipments}

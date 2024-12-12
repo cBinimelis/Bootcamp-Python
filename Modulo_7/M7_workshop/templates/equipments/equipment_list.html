@@ -1,40 +1,36 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    <h1>Equipments</h1>
-    <a href="{% url 'equipment_create' %}">Create Equipment</a>
-    <table>
-      <thead>
-        <tr>
-          <th>ID</th>
-          <th>Serial</th>
-          <th>Brand</th>
-          <th>Model</th>
-          <th>Actions</th>
-        </tr>
-      </thead>
-      <tbody>
-        {% for element in equipments %}
-        <tr>
-          <td>{{element.id}}</td>
-          <td>
-            <a href="{% url 'equipment_view' element.id %}"
-              >{{element.serial}}</a
-            >
-          </td>
-          <td>{{element.brand.name}}</td>
-          <td>{{element.model.name}}</td>
+{% extends 'general/base.html' %}
 
-          <td><a href="{% url 'equipment_edit' element.id %}">Edit</a></td>
-          <td><a href="{% url 'equipment_delete' element.id %}">Delete</a></td>
-        </tr>
-        {% endfor %}
-      </tbody>
-    </table>
-  </body>
-</html>
+<!--CONTENIDO-->
+{%block content%}
+<h1>Equipments</h1>
+<a class="btn btn-primary" href="{% url 'equipment_create' %}"
+  >Create Equipment</a
+>
+<table class="table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Serial</th>
+      <th>Brand</th>
+      <th>Model</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for element in equipments %}
+    <tr>
+      <td>{{element.id}}</td>
+      <td>
+        <a href="{% url 'equipment_view' element.id %}">{{element.serial}}</a>
+      </td>
+      <td>{{element.brand.name}}</td>
+      <td>{{element.model.name}}</td>
+
+      <td><a href="{% url 'equipment_edit' element.id %}">Edit</a></td>
+      <td><a href="{% url 'equipment_delete' element.id %}">Delete</a></td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+{%endblock%}
