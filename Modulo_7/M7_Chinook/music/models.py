@@ -7,7 +7,7 @@ class Artist(models.Model):
 
 
 class Album(models.Model):
-    name = models.CharField(max_length=50)
+    title = models.CharField(max_length=50)
     artist = models.ForeignKey(Artist, on_delete=models.CASCADE)
 
 

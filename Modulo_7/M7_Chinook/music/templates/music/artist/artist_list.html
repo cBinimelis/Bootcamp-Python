@@ -1,0 +1,46 @@
+{% extends 'general/base.html' %}
+<!--TITULO-->
+{% block title %}Artist List{% endblock %}
+<!--CONTENIDO-->
+{%block content%}
+
+<h1>Artists</h1>
+<a class="btn btn-dark" href="{% url 'music:artist_create' %}"
+  ><i class="fa-solid fa-plus"> </i> Create Artist</a
+>
+<table class="table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for element in artists %}
+    <tr>
+      <td class="align-middle fw-bold">
+        <a
+          style="text-decoration: none; color: black"
+          href="{% url 'music:artist_view' element.id %}"
+          >{{element.id}}</a
+        >
+      </td>
+      <td class="align-middle">{{element.name}}</td>
+      <td>
+        <a href="{% url 'music:artist_edit' element.id %}" class="btn btn-dark"
+          ><i class="fa-solid fa-pen"></i
+        ></a>
+      </td>
+      <td>
+        <a
+          href="{% url 'music:artist_delete' element.id %}"
+          class="btn btn-dark"
+          ><i class="fa-solid fa-trash"></i
+        ></a>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{%endblock%}

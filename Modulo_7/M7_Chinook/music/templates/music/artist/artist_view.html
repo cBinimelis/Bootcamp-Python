@@ -1,0 +1,28 @@
+{% extends 'general/base.html' %}
+<!--TITULO-->
+{% block title %}Artist List{% endblock %}
+<!--CONTENIDO-->
+{%block content%}
+
+<h1>{{artist.name}}</h1>
+<table class="table">
+  <tr>
+    <td>ID</td>
+    <td>{{artist.id}}</td>
+  </tr>
+  <tr>
+    <td>Name</td>
+    <td>{{artist.name}}</td>
+  </tr>
+</table>
+<a href="{% url 'music:artist_list' %}" class="btn btn-dark"
+  ><i class="fa-solid fa-reply"></i> Go Back</a
+>
+<a href="{% url 'music:artist_edit' artist.id %}" class="btn btn-dark"
+  ><i class="fa-solid fa-pen"></i> Edit</a
+>
+<a href="{% url 'music:artist_delete' artist.id %}" class="btn btn-danger"
+  ><i class="fa-solid fa-pen"></i> Delete</a
+>
+
+{%endblock%}
