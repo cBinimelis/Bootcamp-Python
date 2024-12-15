@@ -1,0 +1,28 @@
+{% extends 'general/base.html' %}
+<!--TITULO-->
+{% block title %}{{album.name}} Details{% endblock %}
+<!--CONTENIDO-->
+{%block content%}
+
+<h1>{{album.name}}</h1>
+<table class="table">
+  <tr>
+    <td>ID</td>
+    <td>{{album.id}}</td>
+  </tr>
+  <tr>
+    <td>Name</td>
+    <td>{{album.name}}</td>
+  </tr>
+</table>
+<a href="{% url 'music:album_list' %}" class="btn btn-dark"
+  ><i class="fa-solid fa-reply"></i> Go Back</a
+>
+<a href="{% url 'music:album_edit' album.id %}" class="btn btn-dark"
+  ><i class="fa-solid fa-pen"></i> Edit</a
+>
+<a href="{% url 'music:album_delete' album.id %}" class="btn btn-danger"
+  ><i class="fa-solid fa-pen"></i> Delete</a
+>
+
+{%endblock%}
