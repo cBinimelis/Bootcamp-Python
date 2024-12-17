@@ -1,0 +1,48 @@
+{% extends 'general/base.html' %}
+<!--TITULO-->
+{% block title %}Track List{% endblock %}
+<!--CONTENIDO-->
+{%block content%}
+
+<h1>Tracks</h1>
+<a class="btn btn-dark" href="{% url 'music:track_create' %}"
+  ><i class="fa-solid fa-plus"> </i> Create Track</a
+>
+<table class="table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Album</th>
+      <th>Genre</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for element in tracks %}
+    <tr>
+      <td class="align-middle fw-bold">
+        <a
+          style="text-decoration: none; color: black"
+          href="{% url 'music:track_view' element.id %}"
+          >{{element.id}}</a
+        >
+      </td>
+      <td class="align-middle">{{element.name}}</td>
+      <td class="align-middle">{{element.album.title}}</td>
+      <td class="align-middle">{{element.genre.name}}</td>
+      <td>
+        <a href="{% url 'music:track_edit' element.id %}" class="btn btn-dark"
+          ><i class="fa-solid fa-pen"></i
+        ></a>
+      </td>
+      <td>
+        <a href="{% url 'music:track_delete' element.id %}" class="btn btn-dark"
+          ><i class="fa-solid fa-trash"></i
+        ></a>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{%endblock%}

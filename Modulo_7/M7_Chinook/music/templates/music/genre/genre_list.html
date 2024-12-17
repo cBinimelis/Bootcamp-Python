@@ -1,0 +1,44 @@
+{% extends 'general/base.html' %}
+<!--TITULO-->
+{% block title %}Genre List{% endblock %}
+<!--CONTENIDO-->
+{%block content%}
+
+<h1>Genres</h1>
+<a class="btn btn-dark" href="{% url 'music:genre_create' %}"
+  ><i class="fa-solid fa-plus"> </i> Create Genre</a
+>
+<table class="table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for element in genres %}
+    <tr>
+      <td class="align-middle fw-bold">
+        <a
+          style="text-decoration: none; color: black"
+          href="{% url 'music:genre_view' element.id %}"
+          >{{element.id}}</a
+        >
+      </td>
+      <td class="align-middle">{{element.name}}</td>
+      <td>
+        <a href="{% url 'music:genre_edit' element.id %}" class="btn btn-dark"
+          ><i class="fa-solid fa-pen"></i
+        ></a>
+      </td>
+      <td>
+        <a href="{% url 'music:genre_delete' element.id %}" class="btn btn-dark"
+          ><i class="fa-solid fa-trash"></i
+        ></a>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{%endblock%}

@@ -12,11 +12,15 @@
   </tr>
   <tr>
     <td>Name</td>
-    <td>{{album.name}}</td>
+    <td>{{album.title}}</td>
+  </tr>
+  <tr>
+    <td>Artist</td>
+    <td>{{album.artist.name}}</td>
   </tr>
 </table>
 <a href="{% url 'music:album_list' %}" class="btn btn-dark"
-  ><i class="fa-solid fa-reply"></i> Go Back</a
+  ><i class="fa-solid fa-reply"></i> Back to Albums</a
 >
 <a href="{% url 'music:album_edit' album.id %}" class="btn btn-dark"
   ><i class="fa-solid fa-pen"></i> Edit</a

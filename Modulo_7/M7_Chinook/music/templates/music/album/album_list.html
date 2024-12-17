@@ -1,11 +1,11 @@
 {% extends 'general/base.html' %}
 <!--TITULO-->
-{% block title %}Artist List{% endblock %}
+{% block title %}Album List{% endblock %}
 <!--CONTENIDO-->
 {%block content%}
 
 <h1>Albums</h1>
-<a class="btn btn-dark" href="{% url 'music:artist_create' %}"
+<a class="btn btn-dark" href="{% url 'music:album_create' %}"
   ><i class="fa-solid fa-plus"> </i> Create Album</a
 >
 <table class="table">
@@ -13,6 +13,7 @@
     <tr>
       <th>ID</th>
       <th>Name</th>
+      <th>Artist</th>
       <th>Actions</th>
     </tr>
   </thead>
@@ -27,6 +28,13 @@
         >
       </td>
       <td class="align-middle">{{element.title}}</td>
+      <td class="align-middle">
+        <a
+          href="{% url 'music:artist_view' element.artist.id %}"
+          class="text-secondary text-decoration-none"
+          >{{element.artist.name}}</a
+        >
+      </td>
       <td>
         <a href="{% url 'music:album_edit' element.id %}" class="btn btn-dark"
           ><i class="fa-solid fa-pen"></i

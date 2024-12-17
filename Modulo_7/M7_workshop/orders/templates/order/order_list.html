@@ -1,0 +1,30 @@
+{% extends 'general/base.html' %}
+
+<!--CONTENIDO-->
+{%block content%}
+<h1>Listado de Ordenes</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>RUT</th>
+      <th>Cliente</th>
+      <th>Serial</th>
+      <th>Estado</th>
+      <th>Empleado</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for element in orders %}
+    <tr>
+      <td>{{element.owner_rut}}</td>
+      <td>{{element.owner_name}}</td>
+      <td>{{element.equipment.serial}}</td>
+      <td>{{element.get_status_display}}</td>
+      <td>{{element.employee.get_full_name}}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+{%endblock%}

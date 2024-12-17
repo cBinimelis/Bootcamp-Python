@@ -1,0 +1,52 @@
+{% extends 'general/base.html' %}
+
+<!--TITULO-->
+{% block title %}Create Genre{% endblock %}
+<!--CONTENIDO-->
+{%block content%}
+<h1>Genre</h1>
+
+<div class="row">
+  <form class="row g-3" method="post">
+    {% csrf_token %}
+
+    <div class="col-12">
+      <label for="id_name" class="form-label">Name</label>
+      {{form.name}}
+    </div>
+    <div class="col-6">
+      <label for="id_composer" class="form-label">Composer</label>
+      {{form.composer}}
+    </div>
+    <div class="col-6">
+      <label for="id_miliseconds" class="form-label">Milliseconds</label>
+      {{form.miliseconds}}
+    </div>
+    <div class="col-4">
+      <label for="id_size_bytes" class="form-label">Size (bytes)</label>
+      {{form.size_bytes}}
+    </div>
+    <div class="col-4">
+      <label for="id_unit_price" class="form-label">Price</label>
+      {{form.unit_price}}
+    </div>
+    <div class="col-4">
+      <label for="id_media_type" class="form-label">Media Type</label>
+      {{form.media_type}}
+    </div>
+    <div class="col-6">
+      <label for="id_album" class="form-label">Album</label>
+      {{form.album}}
+    </div>
+    <div class="col-6 my-3">
+      <label for="id_genre" class="form-label">Genre</label>
+      {{form.genre}}
+    </div>
+    <div class="col-12">
+      <button type="submit" class="btn btn-success">
+        <span class="fa-solid fa-save"></span> Save
+      </button>
+    </div>
+  </form>
+</div>
+{%endblock%}
