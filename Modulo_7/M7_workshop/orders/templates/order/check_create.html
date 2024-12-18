@@ -1,0 +1,62 @@
+{% extends "general/base.html" %}
+<!--Contenido-->
+{% block content%} {% if action == 'check' %}
+<h1>Chequeando Equipo</h1>
+<form method="post">
+  {% csrf_token %}
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="row mb-3">
+          <label for="serial" class="col-sm-2 col-form-label">Serial</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="serial" name="serial" />
+          </div>
+        </div>
+        <div class="row mb-3">
+          <label for="serial" class="col-sm-2 col-form-label">Rut</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="rut" name="rut" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <input type="hidden" name="action" value="check" />
+  <button type="submit" class="btn btn-primary">Check Equipo</button>
+</form>
+{% endif %} {% if action == 'create_order' %}
+<h2>Creado Orden</h2>
+<form method="post">
+  {% csrf_token %}
+  <input type="hidden" name="action" value="create_order" />
+  <input type="hidden" name="equipment_id" value="{{ equipment.id }}" />
+  <div class="row mb-3">
+    <label for="description" class="col-sm-2 col-form-label">descripción</label>
+    <div class="col-sm-10">
+      <textarea
+        class="form-control"
+        id="description"
+        name="description"
+        rows="3"
+      ></textarea>
+    </div>
+  </div>
+  <div class="row mb-3">
+    <label for="employee_id" class="col-sm-2 col-form-label">descripción</label>
+    <div class="col-sm-10">
+      <select
+        class="form-select"
+        aria-label="Default select example"
+        id="employee_id"
+        name="employee_id"
+      >
+        {% for employee in employees %}
+        <option value="{{ employee.id }}">{{employee.get_full_name}}</option>
+        {% endfor %}
+      </select>
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary">Crear</button>
+</form>
+{% endif %} {% endblock %}
