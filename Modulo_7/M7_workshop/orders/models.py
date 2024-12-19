@@ -11,7 +11,7 @@ STATUSES = [
 ]
 
 
-class profile(models.Model):
+class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     rut = models.CharField(max_length=10)
 

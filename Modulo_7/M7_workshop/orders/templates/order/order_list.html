@@ -12,6 +12,7 @@
 <table class="table">
   <thead>
     <tr>
+      <th>ID</th>
       <th>RUT</th>
       <th>Cliente</th>
       <th>Serial</th>
@@ -22,6 +23,7 @@
   <tbody>
     {% for element in orders %}
     <tr>
+      <td>{{element.id}}</td>
       <td>{{element.owner_rut}}</td>
       <td>{{element.owner_name}}</td>
       <td>{{element.equipment.serial}}</td>

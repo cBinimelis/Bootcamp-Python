@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import Order, OwnerEquipment, User
+from .models import Order, OwnerEquipment, User, Profile
 from equipments.models import Equipment
 
 
@@ -22,6 +22,7 @@ def check_create(request):
                 owner_equipment = OwnerEquipment.objects.filter(
                     equipment=equipment, is_active=True
                 ).first()
+
                 if owner_equipment.user.profile.rut == rut:
                     context = {
                         "action": "create_order",
@@ -29,9 +30,23 @@ def check_create(request):
                         "equipment": equipment,
                     }
                 else:
-                    context = {"action": "change_owner"}
+                    user = Profile.objects.filter(rut=rut).first()
+                    if user:
+                        context = {
+                            "action": "change_owner",
+                            "equipment": equipment,
+                            "user": user,
+                        }
+                    else:
+                        context = {
+                            "action": "change_owner",
+                            "equipment": equipment,
+                            "user": None,
+                        }
             else:
-                context = {"action": "create_all"}
+                owner = Profile.objects.filter(rut=rut).first()
+                form = EquipmentForm()
+                context = {"action": "create_equipment", "user": owner, "form": form}
         elif action == "create_order":
             equipment_id = request.POST.get("equipment_id")
             employee_id = request.POST.get("employee_id")
@@ -43,6 +58,56 @@ def check_create(request):
             )
             order.save()
             return redirect("orders:home")
+        elif action == "change_owner":
+            rut = request.POST.get("rut")
+            equipment_id = request.POST.get("equipment_id")
+            equipment = Equipment.objects.get(pk=equipment_id)
+            owner_equipment = OwnerEquipment.objects.filter(
+                equipment=equipment, is_active=True
+            ).first()
+            owner_equipment.is_active = False
+            owner_equipment.save()
+            if rut:
+                first_name = request.POST.get("first_name")
+                last_name = request.POST.get("last_name")
+                new_user = User(
+                    first_name=first_name,
+                    last_name=last_name,
+                    username=rut,
+                    password=rut,
+                )
+                new_user.save()
+
+                new_owner = OwnerEquipment(equipment=equipment, user=new_user)
+                new_owner.save()
+            else:
+                user_id = request.POST.get("user_id")
+                user = User.objects.get(pk=user_id)
+                new_owner = OwnerEquipment(equipment=equipment, user=user)
+                new_owner.save()
+
+            context = {
+                "action": "create_order",
+                "employees": employees,
+                "equipment": equipment,
+            }
+        elif action == "create_equipment":
+            user_id = request.POST.get("user_id")
+            owner = User.objects.get(pk=user_id)
+
+            equipment_form = EquipmentForm(request.POST)
+            equipment = equipment_form.save()
+
+            owner_equipment = OwnerEquipment(equipment=equipment, user=owner)
+            owner_equipment.save()
+
+            context = {
+                "action": "create_order",
+                "employees": employees,
+                "equipment": equipment,
+            }
+
     else:
         context = {"action": "check"}
-    return render(request, "order/check_create.html", context)
+
+    return render(request, "orders/check_create.html", context=context)
