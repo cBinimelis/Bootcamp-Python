@@ -7,7 +7,7 @@ from equipments.models import Equipment
 def order_list(request):
     orders = Order.objects.all()
     context = {"orders": orders}
-    return render(request, "order/order_list.html", context)
+    return render(request, "orders/order_list.html", context)
 
 
 def check_create(request):
