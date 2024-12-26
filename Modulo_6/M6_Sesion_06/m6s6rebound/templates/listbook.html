@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>List of Books</title>
+  </head>
+  <body>
+    <h3>Libros con valoración mayor a 1500</h3>
+    {% for book in books %} {%if book.score > 1500 %}
+    <li>
+      Titulo: {{book.title}}, Autor: {{book.author}}, Valoracion: {{book.score}}
+    </li>
+    {%endif%} {%endfor%}
+    <h3>Listado de todos los libros</h3>
+    {% for book in books %}
+    <li>Titulo: {{book.title}}, Autor: {{book.author}}</li>
+    {%endfor%}
+  </body>
+</html>
