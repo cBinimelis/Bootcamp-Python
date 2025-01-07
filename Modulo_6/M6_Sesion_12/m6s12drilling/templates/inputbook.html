@@ -1,0 +1,12 @@
+{% extends 'base.html' %} {% block content %}
+<h3 class="my-5">Ingresar Libro</h3>
+{% if user.is_authenticated %}
+<div class="container">
+  <form action="" method="post">
+    {% csrf_token %} {{form.as_p}}
+    <input class="btn btn-primary" type="submit" value="Submit" />
+  </form>
+</div>
+{% else %}
+<h1 class="alert-danger">ACCESO DENEGADO</h1>
+{% endif %} {% endblock %}

@@ -362,7 +362,9 @@ MigrationBackup/
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
 
-.venv/
-/.venv/
+venv/
+/venv/
 .ven/
 /.ven/
+venv/
+/venv/
