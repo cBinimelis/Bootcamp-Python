@@ -47,3 +47,10 @@ class Order(models.Model):
     @property
     def owner_name(self):
         return self.owner_equipment.user.get_full_name()
+
+
+class Detail(models.Model):
+    order = models.ForeignKey(Order, on_delete=models.CASCADE, null=True)
+    description = models.TextField()
+    price = models.DecimalField(max_digits=10, decimal_places=2)
+    tax = models.DecimalField(max_digits=10, decimal_places=2)

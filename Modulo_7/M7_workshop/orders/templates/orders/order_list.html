@@ -1,5 +1,8 @@
 {% extends 'general/base.html' %}
 
+<!-- CONTENIDO ESTATICO -->
+{% load static %}
+
 <!--CONTENIDO-->
 {%block content%}
 <h1>Listado de Ordenes</h1>
@@ -12,31 +15,86 @@
 <table class="table">
   <thead>
     <tr>
-      <th>ID</th>
-      <th>RUT</th>
-      <th>Cliente</th>
-      <th>Serial</th>
-      <th>Estado</th>
-      <th>Empleado</th>
+      <th scope="col">ID</th>
+      <th scope="col">RUT</th>
+      <th scope="col">Cliente</th>
+      <th scope="col">Serial</th>
+      <th scope="col">Estado</th>
+      <th scope="col">Empleado</th>
+      <th scope="col">Acciones</th>
     </tr>
   </thead>
-  <tbody>
-    {% for element in orders %}
-    <tr>
-      <td>{{element.id}}</td>
-      <td>{{element.owner_rut}}</td>
-      <td>{{element.owner_name}}</td>
-      <td>{{element.equipment.serial}}</td>
-      <td>{{element.get_status_display}}</td>
-      <td>{{element.employee.get_full_name}}</td>
-    </tr>
-    {% endfor %}
-  </tbody>
+  <tbody></tbody>
 </table>
 
-{%endblock%} {% load static %}
+<div
+  class="modal fade"
+  id="order_detail"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">
+          Detalle de al Orden
+        </h1>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <form class="row g-3" method="post" id="form-detail">
+          {% csrf_token %}
+          <input type="hidden" id="detail_id" name="detail_id" />
+          <input type="hidden" id="action" name="action" value="create" />
+          <div class="col-12">
+            <label for="description" class="form-label">Descripción</label>
+            <input
+              type="text"
+              class="form-control"
+              id="description"
+              name="description"
+            />
+          </div>
+          <div class="col-md-6">
+            <label for="price" class="form-label">Precio</label>
+            <input type="number" class="form-control" id="price" name="price" />
+          </div>
+          <div class="col-md-6">
+            <label for="tax" class="form-label">Impuesto</label>
+            <input type="number" class="form-control" id="tax" name="tax" />
+          </div>
+          <button class="btn btn-primary" type="submit">Guardar</button>
+        </form>
+
+        <table class="table mt-5" id="orders_details">
+          <thead>
+            <tr>
+              <th scope="col">Descripcion</th>
+              <th scope="col">Price</th>
+              <th scope="col">Impuesto</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Cerrar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+{%endblock%}
 <!--SCRIPT JS-->
 {% block scripts %}
-<script src="{% static 'js/scripts.js' %}"></script>
+<script src="{% static 'js/orders/scripts.js' %}"></script>
 
 {%endblock%}

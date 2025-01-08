@@ -1,15 +1,19 @@
+from django.http import JsonResponse
 from django.shortcuts import render, redirect
-from .models import Order, OwnerEquipment, User, Profile
+from .models import Order, OwnerEquipment, User, Profile, Detail
 from equipments.models import Equipment
+from equipments.forms import EquipmentForm
+from django.contrib.auth.models import User
+from django.contrib.auth.decorators import login_required
 
 
 # Create your views here.
+@login_required
 def order_list(request):
-    orders = Order.objects.all()
-    context = {"orders": orders}
-    return render(request, "orders/order_list.html", context)
+    return render(request, "orders/order_list.html")
 
 
+@login_required
 def check_create(request):
     if request.method == "POST":
         employees = User.objects.filter(is_staff=True)
@@ -111,3 +115,55 @@ def check_create(request):
         context = {"action": "check"}
 
     return render(request, "orders/check_create.html", context=context)
+
+
+def api_order_list(request):
+    employee_id = request.user.id
+    get_orders = Order.objects.filter(employee_id=employee_id)
+    orders = [
+        {
+            "id": order.id,
+            "rut": order.owner_rut,
+            "name": order.owner_name,
+            "serial": order.equipment.serial,
+            "status": order.get_status_display(),
+            "employee": order.employee.get_full_name(),
+        }
+        for order in get_orders
+    ]
+    return JsonResponse(orders, safe=False)
+
+
+def api_order_detail(requiest, pk):
+    order_details = Detail.objects.filter(order_id=pk)
+    details = [
+        {
+            "id": detail.id,
+            "description": detail.description,
+            "price": detail.price,
+            "tax": detail.tax,
+        }
+        for detail in order_details
+    ]
+    return JsonResponse(details, safe=False)
+
+
+def create_detail(request, pk):
+    if request.POST["action"] == "create":
+        description = request.POST.get("description")
+        price = request.POST.get("price")
+        tax = request.POST.get("tax")
+        detail = Detail(order_id=pk, description=description, price=price, tax=tax)
+        detail.save()
+
+    order_details = Detail.objects.filter(order_id=pk)
+    details = [
+        {
+            "id": detail.id,
+            "description": detail.description,
+            "price": detail.price,
+            "tax": detail.tax,
+        }
+        for detail in order_details
+    ]
+    return JsonResponse(details, safe=False)
