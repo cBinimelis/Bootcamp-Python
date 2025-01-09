@@ -368,3 +368,5 @@ venv/
 /.ven/
 venv/
 /venv/
+/practica_orm_django/
+practica_orm_django/

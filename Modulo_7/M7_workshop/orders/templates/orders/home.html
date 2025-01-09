@@ -1,22 +1,13 @@
-{% extends 'general/base.html' %}
-
-<!-- CONTENIDO ESTATICO -->
-{% load static %}
-
-<!--CONTENIDO-->
-{%block content%}
-<h1>Listado de Ordenes</h1>
-
-<a
-  class="btn btn-primary my-2 float-end"
-  href="{%  url 'orders:check_create' %}"
-  >Create Orders</a
+{% extends "general/base.html" %} {% load static %} {% block content%}
+<h1>Listado de ordenes</h1>
+<a class="btn btn-primary my-2 float-end" href="{% url 'orders:check_create'%}"
+  >Crear Orden</a
 >
-<table class="table">
+<table class="table" id="orders_list">
   <thead>
     <tr>
-      <th scope="col">ID</th>
-      <th scope="col">RUT</th>
+      <th scope="col">Id Orden</th>
+      <th scope="col">Rut</th>
       <th scope="col">Cliente</th>
       <th scope="col">Serial</th>
       <th scope="col">Estado</th>
@@ -75,7 +66,7 @@
         <table class="table mt-5" id="orders_details">
           <thead>
             <tr>
-              <th scope="col">Descripcion</th>
+              <th scope="col">Descripción</th>
               <th scope="col">Price</th>
               <th scope="col">Impuesto</th>
             </tr>
@@ -91,10 +82,5 @@
     </div>
   </div>
 </div>
-
-{%endblock%}
-<!--SCRIPT JS-->
-{% block scripts %}
 <script src="{% static 'js/orders/scripts.js' %}"></script>
-
-{%endblock%}
+{% endblock %}

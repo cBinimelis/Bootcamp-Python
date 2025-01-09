@@ -3,8 +3,8 @@ from equipments.models import Equipment
 from django.contrib.auth.models import User
 
 STATUSES = [
-    ("recieved", "Recibido"),
-    ("doing", "Reparacion"),
+    ("received", "Recibido"),
+    ("doing", "Reparación"),
     ("tests", "Pruebas"),
     ("ready", "Listo"),
     ("delivered", "Entregado"),
@@ -16,7 +16,6 @@ class Profile(models.Model):
     rut = models.CharField(max_length=10)
 
 
-# Create your models here.
 class OwnerEquipment(models.Model):
     equipment = models.ForeignKey(Equipment, on_delete=models.CASCADE)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
@@ -30,7 +29,7 @@ class Order(models.Model):
     description = models.TextField()
     create_at = models.DateTimeField(auto_now=True)
     delivered_at = models.DateTimeField(null=True)
-    status = models.CharField(max_length=15, choices=STATUSES, default="recieved")
+    status = models.CharField(max_length=15, choices=STATUSES, default="received")
 
     @property
     def owner_equipment(self):

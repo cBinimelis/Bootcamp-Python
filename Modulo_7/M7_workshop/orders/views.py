@@ -1,16 +1,15 @@
 from django.http import JsonResponse
 from django.shortcuts import render, redirect
-from .models import Order, OwnerEquipment, User, Profile, Detail
+from .models import Order, OwnerEquipment, Profile, Detail
 from equipments.models import Equipment
 from equipments.forms import EquipmentForm
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 
 
-# Create your views here.
 @login_required
-def order_list(request):
-    return render(request, "orders/order_list.html")
+def home(request):
+    return render(request, "orders/home.html")
 
 
 @login_required
@@ -117,7 +116,7 @@ def check_create(request):
     return render(request, "orders/check_create.html", context=context)
 
 
-def api_order_list(request):
+def api_home(request):
     employee_id = request.user.id
     get_orders = Order.objects.filter(employee_id=employee_id)
     orders = [
@@ -134,7 +133,7 @@ def api_order_list(request):
     return JsonResponse(orders, safe=False)
 
 
-def api_order_detail(requiest, pk):
+def api_order_detail(request, pk):
     order_details = Detail.objects.filter(order_id=pk)
     details = [
         {

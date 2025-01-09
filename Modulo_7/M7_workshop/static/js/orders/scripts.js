@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const orderBody = document.querySelector("#order_list tbody");
+  const orderBody = document.querySelector("#orders_list tbody");
 
   function openModal(id) {
     document.getElementById("detail_id").value = id;
@@ -14,20 +14,20 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function getOrders() {
-    fetch("/orders/api/order_list")
+    fetch("/orders/api/home")
       .then((response) => response.json())
       .then((orders) => {
         orders.forEach((order) => {
           const row = document.createElement("tr");
           row.innerHTML = `
-                <td>${order.id}</td>
-                <td>${order.rut}</td>
-                <td>${order.name}</td>
-                <td>${order.serial}</td>
-                <td>${order.status}</td>
-                <td>${order.employee}</td>
-                <td><button class='btn btn-primary see-detail' data-id=${order.id}>Ver Detalles</button></td>
-            `;
+                          <td>${order.id}</td>
+                          <td>${order.rut}</td>
+                          <td>${order.name}</td>
+                          <td>${order.serial}</td>
+                          <td>${order.status}</td>
+                          <td>${order.employee}</td>
+                          <td><button class='btn btn-primary see-detail' data-id='${order.id}'>Ver detalle</button></td>
+                      `;
           orderBody.appendChild(row);
         });
       });
@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   getOrders();
 
-  document.querySelector("#order_list").addEventListener("click", (event) => {
+  document.querySelector("#orders_list").addEventListener("click", (event) => {
     if (event.target.classList.contains("see-detail")) {
       openModal(event.target.dataset.id);
     }
@@ -73,12 +73,12 @@ document.addEventListener("DOMContentLoaded", () => {
     data.forEach((detail) => {
       const row = document.createElement("tr");
       row.innerHTML = `
-                <td>${detail.description}</td>
-                <td>${detail.price}</td>
-                <td>${detail.tax}</td>
-                <td><button class='btn btn-primary detail-edit' data-id='${detail.id}'>Editar</button></td>
-                <td><button class='btn btn-primary detail-delete' data-id='${detail.id}'>Eliminar</button></td>
-            `;
+                  <td>${detail.description}</td>
+                  <td>${detail.price}</td>
+                  <td>${detail.tax}</td>
+                  <td><button class='btn btn-primary detail-edit' data-id='${detail.id}'>Editar</button></td>
+                  <td><button class='btn btn-primary detail-delete' data-id='${detail.id}'>Eliminar</button></td>
+              `;
       detailBody.appendChild(row);
     });
   }
