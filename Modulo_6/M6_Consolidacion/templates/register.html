@@ -1,0 +1,21 @@
+{% extends 'base.html'%}
+
+<!-- TITULO -->
+{% block title %}Vehículos{% endblock %}
+
+<!-- CONTENIDO -->
+{% block content%} {% load crispy_forms_tags %}
+
+<h1>Registro de usuarios</h1>
+<form method="POST">
+  <!-- TOKEN -->
+  {% csrf_token %}
+  <!-- FORMULARIO -->
+  {{register_form|crispy}}
+  <input type="submit" class="btn btn-secondary" value="Guardar" />
+</form>
+<p class="text-center">
+  ¿Ya tienes una cuenta? Intenta
+  <a href="{% url 'login' %}">iniciar sesión</a>.
+</p>
+{% endblock %}

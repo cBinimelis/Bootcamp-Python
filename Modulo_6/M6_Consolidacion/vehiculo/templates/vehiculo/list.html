@@ -1,0 +1,30 @@
+{% extends 'base.html'%}
+
+<!-- TITULO -->
+{% block title %}Vehículos{% endblock %}
+
+<!-- CONTENIDO -->
+{% block content%}
+<!-- LISTADO -->
+<table class="table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Marca</th>
+      <th>Modelo</th>
+      <th>Condición de Precio</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for element in vehiculos %}
+    <tr>
+      <td>{{element.id}}</td>
+      <td>{{element.marca}}</td>
+      <td>{{element.modelo}}</td>
+
+      <td></td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}
