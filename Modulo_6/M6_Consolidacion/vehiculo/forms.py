@@ -18,9 +18,7 @@ class VehiculoForm(forms.ModelForm):
 
 
 class RegisterForm(UserCreationForm):
-    email = forms.EmailField(
-        required=True, widget=forms.EmailInput(attrs={"class": "form-control"})
-    )
+    email = forms.EmailField(required=True)
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)

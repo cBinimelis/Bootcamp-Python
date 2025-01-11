@@ -34,14 +34,11 @@ class VehiculoModel(models.Model):
         )
 
     def __str__(self):
-        return self.modelo + " - " + self.marca
-
-    def condicion(self, obj):
-        if obj.precio >= 0 and obj.precio <= 10000:
+        if self.precio >= 0 and self.precio <= 10000:
             valor = "Bajo"
-        elif obj.precio > 10000 and obj.precio <= 30000:
+        elif self.precio > 10000 and self.precio <= 30000:
             valor = "Medio"
-        elif obj.precio > 30000:
+        elif self.precio > 30000:
             valor = "Alto"
 
-        return valor
+        return f"{self.modelo}-{self.marca}-{valor}"

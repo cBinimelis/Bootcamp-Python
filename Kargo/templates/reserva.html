@@ -1,17 +1,26 @@
 {% extends 'base.html'%}
 
 <!-- TITULO -->
-{% block title %}Vehículos{% endblock %}
+{% block title %}Reservar Pista{% endblock %}
 
 <!-- CONTENIDO -->
 {% block content%} {% load crispy_forms_tags %}
+
+<!-- MENSAJES -->
+{% if messages %}
+<ul class="messages">
+  {% for message in messages %}
+  <div class="alert alert-{{ message.tags }}">{{ message }}</div>
+  {% endfor %}
+</ul>
+{% endif %}
 
 <h1 class="text-center">Reserva</h1>
 <form method="POST">
   <!-- TOKEN -->
   {% csrf_token %}
   <!-- FORMULARIO -->
-  {{reserva_form|crispy}}
-  <input type="submit" class="btn btn-secondary" value="Iniciar Sesión" />
+  {{cliente_form|crispy}} {{reserva_form|crispy}}
+  <input type="submit" class="btn btn-danger" value="Realizar Reserva" />
 </form>
 {% endblock %}

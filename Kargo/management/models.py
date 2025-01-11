@@ -34,6 +34,7 @@ class Cliente(models.Model):
     correo = models.CharField(max_length=70)
     telefono = models.CharField(max_length=15)
     edad = models.IntegerField()
+    user = models.OneToOneField(User, on_delete=models.CASCADE, null=True)
 
 
 class Pista(models.Model):
@@ -46,8 +47,8 @@ class Pista(models.Model):
 
 
 class Reserva(models.Model):
-    cliente = models.ForeignKey(Cliente, on_delete=models.CASCADE)
-    pista = models.ForeignKey(Pista, on_delete=models.SET_NULL, null=True)
+    pista = models.ForeignKey(Pista, on_delete=models.CASCADE, null=True)
     fecha = models.DateField()
-    hora = models.TimeField(max_length=5, choices=HORAS)
+    hora = models.CharField(max_length=5, choices=HORAS)
     estado = models.CharField(max_length=50, choices=ESTADOS, default="reservada")
+    cliente = models.OneToOneField(Cliente, on_delete=models.CASCADE, null=True)
