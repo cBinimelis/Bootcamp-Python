@@ -61,7 +61,7 @@
             </li>
           </ul>
           {% if user.is_authenticated %}
-          <span class="navbar-text mx-2"> Hola, {{user.first_name}} </span>
+          <span class="navbar-text mx-2"> Hola, {{user.username}} </span>
           <a class="nav-link text-light" href="{%  url 'logout' %}"
             >Cerrar Sesión</a
           >
