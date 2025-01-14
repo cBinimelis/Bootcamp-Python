@@ -1,0 +1,54 @@
+{% extends 'general/base.html' %}
+<!--TITULO-->
+{% block title %}Album List{% endblock %}
+<!--CONTENIDO-->
+{%block content%}
+
+<h1>Reservas</h1>
+{% if user.is_staff %}
+<a class="btn btn-dark" href="{% url 'management:reserva_create' %}"
+  ><i class="fa-solid fa-plus"> </i> Crear Reserva</a
+>
+{% endif %}
+<table class="table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Pista</th>
+      <th>Fecha</th>
+      <th>Hora</th>
+      <th>Estado</th>
+      <th class="col-1">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for element in reservas %}
+    <tr>
+      <td class="align-middle fw-bold">
+        <a
+          style="text-decoration: none; color: black"
+          href="{% url 'management:reserva_view' element.id %}"
+          >{{element.id}}</a
+        >
+      </td>
+      <td class="align-middle">{{element.pista}}</td>
+      <td class="align-middle">{{element.fecha}}</td>
+      <td class="align-middle">{{element.hora}}</td>
+      <td class="align-middle">{{element.estado}}</td>
+      <td class="col-1">
+        <a
+          href="{% url 'management:reserva_edit' element.id %}"
+          class="btn btn-danger"
+          ><i class="fa-solid fa-pen"></i
+        ></a>
+        <a
+          href="{% url 'management:reserva_delete' element.id %}"
+          class="btn btn-danger"
+          ><i class="fa-solid fa-trash"></i
+        ></a>
+      </td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{%endblock%}

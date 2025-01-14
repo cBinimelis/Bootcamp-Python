@@ -26,3 +26,42 @@ Al comenzar a explorar la capa de la base de datos de Django se necesita tener e
 - `DATABASE_PASSWORD = ''` Indica a Django cuál es la contraseña a utilizar cuando se conecte a la base de datos. Si está utilizando SQLite o no ha incluido contraseña, dejar vacío.
 
 - `DATABASE_HOST = ''` Le indica a Django cual es el host a usar cuando se conecta a la base de datos.
+
+**Para probar la configuración de tu base de datos**
+
+```python
+from django.db import connection
+cursos = connection.cursos()
+```
+
+### Soporte para bases NoSql
+
+- En primer lugar se debe instalar la librería postgresql_psycopg2: `pip install psycopg2-binary`
+- Luego se debe crear la base de datos. Esto se puede realizar desde el PGAdmin (entorno visual) o desde el PSQL Shell.
+- Realizado esto debemos editar el archivo settings.py.
+  ```python
+    DATABASES = {
+        "default": {
+            "ENGINE": "django.db.backends.postgreSQL_psycopg2",
+            "NAME": "db_practica_orm",
+            "USER": "user_db",
+            "PASSWORD": "user_db",
+            "HOST": "",
+            "PORT": "",
+        }
+    }
+  ```
+- Hecho esto se procede a teclear el comando de migración de la base de datos: `python manage.py migrate`
+
+En la creación del proyecto en Django y conectar a PostgreSql se sigue los siguientes pasos
+
+- Crear un entorno virtual: `virtualenv myenv`
+- Inicializar la virtualenv: `.myenv\Scripts\activate`
+- Descargar Django en nuestra virtualenv: `pip install django`
+- Inicializar un proyecto con Django: `django-admin startproject .`
+- Crear una base de datos local con PostgreSQL y asignarle un usuario
+- Cambiar la configuración de la base de datos para utilizar PostgreSQL en lugar de SQLite en settings.py dentro de nuestro proyecto.
+- Instalar el conector para PostgreSQL: `pip install psycopg2`
+- Migrar la base de datos: `python manage.py migrate`
+- Crear un superusuario para loguearnos en el admin de Django: `python manage.py createsuperuser`
+- Iniciar sesión con el usuario creado en /admin.

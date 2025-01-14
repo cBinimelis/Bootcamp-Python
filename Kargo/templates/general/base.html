@@ -15,26 +15,34 @@
     <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
 
 
-    <title>{% block title %}Lorem{% endblock %}</title>
+    <title>{% block title %}Ambiente Privado{% endblock %}</title>
   </head>
 
-  <body style="background-color: #f8d7da;">
+  <body>
     <nav class="navbar navbar-expand-lg" style="background-color: #58151c;">
       <div class="container-fluid">
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar_private" aria-controls="navbar_private" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
+          <span class="navbar-toggler-icon" data-bs-theme="light"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbar_private">
-          <a class="navbar-brand  text-light" href="#">Hidden brand</a>
+          <a class="navbar-brand  text-light" href="#">Kargo</a>
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link text-light active" aria-current="page" href="#">Home</a>
+              <a class="nav-link text-light active" aria-current="page" href="#">Inicio</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-light" href="#">Link</a>
+              <a class="nav-link text-light" href="{%  url 'management:reserva_list' %}">Reservas</a>
             </li>
+            {% if perms.pista.view_pista %}
+            <li class="nav-item">
+              <a class="nav-link text-light" href="{%  url 'management:pista_list' %}">Pistas</a>
+            </li>
+            {% endif %}
           </ul>
-          <a class="nav-link text-light " href="{% url 'logout' %}">Cerrar Sesion</a>
+          <span class="navbar-text text-light mx-2"> Hola, {{user.username}} </span>
+          <a class="nav-link text-light" href="{%  url 'logout' %}"
+            >Cerrar Sesión</a
+          >
         </div>
       </div>
     </nav>

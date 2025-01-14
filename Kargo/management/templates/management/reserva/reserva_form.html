@@ -1,0 +1,42 @@
+{% extends 'general/base.html' %}
+
+<!--TITULO-->
+{% block title %}Reserva{% endblock %}
+<!--CONTENIDO-->
+{%block content%}
+<h1>Reserva</h1>
+
+<div class="row">
+  <form class="row g-3" method="post">
+    {% csrf_token %} {% if user.is_staff %}
+    <div class="col-12 my-3">
+      <label for="id_pista" class="form-label">Pista</label>
+      {{form.pista}}
+    </div>
+    {% endif %}
+
+    <div class="col-6 my-3">
+      <label for="id_fecha" class="form-label">Fecha</label>
+      {{form.fecha}}
+    </div>
+    <div class="col-6 my-3">
+      <label for="id_hora" class="form-label">Hora</label>
+      {{form.hora}}
+    </div>
+    {% if user.is_staff %}
+    <div class="col-12 my-3">
+      <label for="id_estado" class="form-label">Estado</label>
+      {{form.estado}}
+    </div>
+    {% endif %}
+    <div class="col-12">
+      <button type="submit" class="btn btn-success">
+        <span class="fa-solid fa-save"></span> Guardar
+      </button>
+      <a class="btn btn-dark" href="{% url 'management:reserva_list' %}"
+        ><i class="fa-solid fa-cancel"> </i> Cancelar</a
+      >
+    </div>
+  </form>
+</div>
+{%endblock%}

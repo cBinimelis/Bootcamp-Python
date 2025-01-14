@@ -1,0 +1,35 @@
+{% extends 'general/base.html' %}
+
+<!--TITULO-->
+{% block title %}Pista{% endblock %}
+<!-- CONTENIDO -->
+{% block content%} {% load crispy_forms_tags %}
+<h1>Pista</h1>
+
+<div class="row">
+  <form class="row g-3" method="post">
+    {% csrf_token %}
+
+    <div class="col-12 my-3">
+      <label for="id_nombre" class="form-label">Nombre</label>
+      {{form.nombre}}
+    </div>
+
+    <div class="col-6 my-2">
+      <label for="id_tipo" class="form-label">Tipo</label>
+      {{form.tipo}}
+    </div>
+    <div class="col-6 my-2">
+      <label for="id_cantidad_vehiculo" class="form-label"
+        >Cantidad de Vehiculos</label
+      >
+      {{form.cantidad_vehiculos}}
+    </div>
+    <div class="col-12">
+      <button type="submit" class="btn btn-success btn-block">
+        <span class="fa-solid fa-save"></span> Save
+      </button>
+    </div>
+  </form>
+</div>
+{%endblock%}

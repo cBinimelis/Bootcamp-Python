@@ -1,0 +1,13 @@
+-- ENTORNOS VIRTUALES --
+
+.venv               - Entorno por defecto de PyCharm
+venv                - Entorno creado manualmente
+requirements.txt    - Archivo con las dependencias de proyecto
+
+
+-- USUARIOS -- 
+
+|--USER--|--PASS--|
+| admin  | admin  | - Todos los permisos
+| user   |user_000| - Usuario SIN autorización al listado
+| user2  |rftgYHUJ| - Usuario SIN autorización a la creación

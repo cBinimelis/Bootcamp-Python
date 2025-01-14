@@ -1,5 +1,6 @@
 {%extends 'general/base.html'%} {%block title%} Dashboard - Home {%endblock%}
 {%block content%}
+
 <h1>Dashboard</h1>
 
 {% if request.user.is_authenticated %}
@@ -7,4 +8,51 @@
   {%csrf_token%}
   <button type="submit">Cerrar Sesion</button>
 </form>
-{%endif%} {%endblock%}
+
+{%endif%}
+
+<canvas id="chartUno"> </canvas>
+
+{%endblock%}
+
+<!-- SCRIPTS -->
+{% block scripts %}
+<script>
+
+  const data_back = {{data|safe}}
+
+  const labels = data_back.map(item => item.status)
+  const data_front = data_back.map(item => item.total_venta)
+
+  const lowData = {
+      labels: labels,
+      datasets: [{
+          label: 'Total Ventas',
+          data: data_front,
+          backgroundColor: 'rgba(75, 192, 192, 0.3)',
+          borderColor: 'rgba(75, 192, 192, 1)',
+          borderWith: 1
+      }]
+  }
+
+  new Chart(document.getElementById('chartUno'), {
+      type: 'bar',
+      data: lowData,
+      options: {
+          responsive: true,
+          scales: {
+              x: {
+                  title: {
+                      display: true,
+                      text: 'Order ID'
+                  }
+              },
+              y: {
+                  display: true,
+                  text: 'Total Ventas'
+              }
+          }
+      }
+  })
+</script>
+{% endblock %}

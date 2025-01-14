@@ -36,6 +36,9 @@ class Cliente(models.Model):
     edad = models.IntegerField()
     user = models.OneToOneField(User, on_delete=models.CASCADE, null=True)
 
+    def __str__(self):
+        return self.nombre
+
 
 class Pista(models.Model):
     nombre = models.CharField(max_length=100)
@@ -49,6 +52,6 @@ class Pista(models.Model):
 class Reserva(models.Model):
     pista = models.ForeignKey(Pista, on_delete=models.CASCADE, null=True)
     fecha = models.DateField()
-    hora = models.CharField(max_length=5, choices=HORAS)
+    hora = models.TimeField(max_length=5, choices=HORAS)
     estado = models.CharField(max_length=50, choices=ESTADOS, default="reservada")
     cliente = models.OneToOneField(Cliente, on_delete=models.CASCADE, null=True)

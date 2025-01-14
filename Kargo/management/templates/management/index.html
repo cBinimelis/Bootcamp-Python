@@ -14,4 +14,22 @@
   velit quaerat voluptate corrupti voluptatibus saepe non impedit, placeat
   dolorem.
 </p>
+<table class="table">
+  <thead>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </thead>
+  <tbody>
+    {% for elemento in data %}
+    <tr>
+      <td>{{elemento.id}}</td>
+      <td>{{elemento.nombre}}</td>
+      <td>{{elemento.tipo}}</td>
+      <td>{{elemento.cantidad_vehiculos}}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
 {% endblock %}
