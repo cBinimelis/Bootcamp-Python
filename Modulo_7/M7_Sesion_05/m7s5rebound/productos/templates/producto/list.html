@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Producto</h1>
+
+    <table border="1">
+      <thead>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Descripcion</th>
+        <th>Precio</th>
+      </thead>
+      <tbody>
+        {% for producto in productos %}
+        <tr>
+          <td>{{producto.id}}</td>
+          <td>{{producto.nombre}}</td>
+          <td>{{producto.descripcion}}</td>
+          <td>{{producto.precio}}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <a href="{% url 'productos:producto_create' %}">Agregar Producto</a>
+  </body>
+</html>
