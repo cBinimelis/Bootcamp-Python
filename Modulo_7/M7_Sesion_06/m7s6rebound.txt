@@ -1,0 +1,10 @@
+1. -    0001_initial.py
+        0002_fabricante.py
+        0003_producto_fabricante.py
+
+        El Inicial.py se crea para inicializar el nuevo modelo y crear la estructura en la base de datos.
+
+2.- El comando "sqlmigrate".
+    El 
+
+3.- es el campo adicional "id", el cual se crea automáticamente al realizar la migración.
