@@ -21,7 +21,7 @@ def producto_create(request):
     return render(request, "producto/form.html", context)
 
 
-def pista_edit(request, pk):
+def producto_edit(request, pk):
     producto = Producto.objects.get(id=pk)
     if request.method == "POST":
         form = ProductoForm(request.POST, instance=producto)
@@ -30,7 +30,7 @@ def pista_edit(request, pk):
     else:
         form = ProductoForm(instance=producto)
     context = {"form": form}
-    return render(request, "producto/producto_form.html", context)
+    return render(request, "producto/form.html", context)
 
 
 def producto_delete(request, pk):
@@ -40,10 +40,10 @@ def producto_delete(request, pk):
         return redirect("productos:producto_list")
     else:
         context = {"producto": producto}
-        return render(request, "producto/producto_confirm_delete.html", context)
+        return render(request, "producto/confirm_delete.html", context)
 
 
 def producto_view(request, pk):
     producto = Producto.objects.get(id=pk)
     context = {"producto": producto}
-    return render(request, "producto/producto_view.html", context)
+    return render(request, "producto/view.html", context)
