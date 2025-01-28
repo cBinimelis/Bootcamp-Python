@@ -1,0 +1,9 @@
+<h1>¿Estás seguro que quieres borrar {{laboratorio.nombre}}?</h1>
+
+<form method="post">
+  {% csrf_token %}
+  <button class="btn btn-success" type="submit">Yes, delete</button>
+  <a class="btn btn-danger" href="{% url 'laboratorio:laboratorio_list' %}"
+    >Cancel</a
+  >
+</form>

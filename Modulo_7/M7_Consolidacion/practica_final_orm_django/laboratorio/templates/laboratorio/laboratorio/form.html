@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      table {
+        border: 8px outset;
+        border-radius: 10px;
+        border-spacing: 10px;
+        padding: 20px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      th,
+      td {
+        padding: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 style="text-align: center">Laboratorios</h1>
+    <form method="POST">
+      {% csrf_token %}
+      <table style="width: auto" align="center">
+        <tr>
+          <td>Nombre</td>
+          <td>{{ form.nombre }}</td>
+        </tr>
+        <tr>
+          <td>Ciudad</td>
+          <td>{{ form.ciudad }}</td>
+        </tr>
+        <tr>
+          <td>Pais</td>
+          <td>{{form.pais}}</td>
+        </tr>
+        <tr>
+          <td colspan="2" align="center">
+            <input type="submit" class="btn btn-success" />
+          </td>
+        </tr>
+      </table>
+    </form>
+    <a style="margin: 40px" href="{% url 'laboratorio:laboratorio_list' %}"
+      >Volver a laboratorios</a
+    >
+  </body>
+</html>
